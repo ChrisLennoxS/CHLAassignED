@@ -1,0 +1,116 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
+
+
+.logo {
+    width:142px;
+    height: 27.12px;
+    
+}
+
+.mainNav {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    margin-right: -65px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    
+}
+
+p, .image {
+    margin: 0;
+
+}
+
+.userImageBorder {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.userImage {
+    width: 45.2px;
+    height: 42px;
+    margin-left: -8.25%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+
+
+.userInfo {
+    display: inline-block;
+    margin-right: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 20px;
+    vertical-align: middle;
+/* identical to box height */
+
+
+color: #707070;
+}
+
+.mainDiv {
+     width: 275px;
+     align-items: center;
+     vertical-align: middle;
+}
+
+.mainNavButton {
+    padding: 0;
+}
+
+.menuBox {
+    z-index: -1;
+    margin-top: 25%;
+    margin-right: 10%;
+    border-top-left-radius: 0;
+    border-top: none;
+    border-left: none;
+    background: rgba(247, 250, 251, 0.8);
+    width: 267px;
+    height: 279px;
+    box-shadow: inset 0px 4px 2px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+    
+    
+    
+    
+}
+
+.navItemBox {
+    margin-top: 25px;
+    margin-left: 5%;
+}
+
+.navItem {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    
+}
+
+
+
+img.navItem {
+    width: 21px;
+    height: 21px;
+}
+
+a.navItem {
+    padding-left: 10%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 20px;
+    color: black;
+}

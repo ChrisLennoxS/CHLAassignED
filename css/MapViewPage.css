@@ -1,0 +1,75 @@
+
+
+#outermostDiv {
+    margin-top: 70px;
+}
+
+.row {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.roomDiv{
+    
+    height: 210px;
+    width: 366px;
+    display: block;
+    
+
+    
+}
+
+#middleRowDiv {
+    height: 313px;
+    
+}
+
+.rooms{
+    background-color: #DCE1E2;
+    margin-right: auto;
+    margin-left: auto;
+    height: 210px;
+}
+
+
+.roomOneSevenEight {
+    
+    width: 313px;
+}
+
+.roomTwoThree {
+    width: 156px;
+    
+    display: inline-block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#roomFive {
+    height:313px;
+    width: 207px;
+}
+
+.roomFourSix {
+    width: 207px;
+}
+
+#circleDiv {
+    width: 366px;
+}
+
+#circleRoom {
+    border-radius: 50%;
+    width: 244px;
+    height: 244px;
+   
+}
+
+.rightAlignedRooms {
+    margin-right: 0px;
+    margin-left: 7.5%;
+}
+
+.leftAlignedRooms {
+    margin-left: 0px;
+}
