@@ -1,12 +1,31 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
 
-.container {
+.container-fluid {
     margin-top: 7%;
     
 }
 
+#contents {
+    width: 85%;
+    margin-left: 3%;
+}
+
 .dropdownDiv {
-    max-width: 1200px;
+    margin-bottom: -2.5%;
+}
+
+#runButton {
+    width: 110px;
+    height: 50px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
 }
 
 #assignmentHistoryText, #recentAssign {
@@ -16,6 +35,12 @@
     font-size: 25px;
     line-height: 29px;
     color: #000000;
+    margin-bottom: 4%;
+}
+
+#recentAssign {
+    margin-top: 11%;
+    
 }
 
 #csvDownloadLink { 
@@ -33,4 +58,45 @@
 #recentAssign {
     display: inline-block;
     margin-right: 2%;
+    
+    margin-bottom: 8%;
+}
+
+#nurseTable {
+    margin-top: -6%;
+    
+}
+
+.table th { 
+    border-top: none; 
+}
+
+.dropDownCal {
+    width: 375px;
+    height: 50px;
+    left: 550px;
+    top: 432px;
+
+    background: #FFFFFF;
+    border: 1px solid #F4F4F4;
+    box-sizing: border-box;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.11);
+    border-radius: 5px;
+
+    
+
+    appearance: none;/* hide the default arrow */
+    background: 95%  url('../images/selectChevron.svg')  no-repeat  transparent;
+}
+
+.dropDownCalContainer {
+    width: 375px;
+}
+
+.dropdown {
+    height: 50px;
+}
+
+.cal {
+    margin-left: 13.5%;
 }

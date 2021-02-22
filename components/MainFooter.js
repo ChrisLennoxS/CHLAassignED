@@ -7,6 +7,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'jquery/dist/jquery.min.js';
 import sideBenchLogo from "../images/logo 1.svg";
 
+
 export const MainFooter = () => {
     return (
         <>

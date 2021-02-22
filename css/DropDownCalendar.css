@@ -1,0 +1,16 @@
+.dateChooser {
+    width: 70px;
+    margin-bottom: 0;
+}
+
+.monthDayDropDown {
+    border: none;
+    box-shadow: none;
+    appearance: none;/* hide the default arrow */
+    background: none;
+    
+    
+    /* Best to include the browser prefix for cross-browser compatibility */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}

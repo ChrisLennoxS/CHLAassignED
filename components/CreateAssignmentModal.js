@@ -5,6 +5,7 @@ import exitButton from '../images/iconfinder_icons_exit_1564505 1.svg';
 import '../css/CreateAssignmentModal.css';
 
 
+
 const Background = styled.div`
     width: 100%;
     height: 100%;

@@ -11,6 +11,7 @@ import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'jquery/dist/jquery.min.js';
+import Hello from '../components/Hello.js';
 
 export const MainNavBar = () => {
     return (
@@ -42,6 +43,9 @@ export const MainNavBar = () => {
                         <div className="dropdown-item">
                             <img className="navItem" src={people}/>
                             <a className=" navItem" href="#">Create/ Edit View</a>
+                        </div>
+                        <div>
+                            <Hello></Hello>
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import { LoginModal } from './components/LoginModal.js';
 import { RoomHistoryPage } from './pages/RoomHistoryPage.js';
