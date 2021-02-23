@@ -1,14 +1,17 @@
-import React, { Component }  from 'react';
+import React, { useEffect, useState }  from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { MainFooter } from '../components/MainFooter.js';
 import { MainNavBar } from '../components/MainNavBar.js';
 import greenFile from '../images/greenFile.svg'
 import YearMonthForm  from '../components/DropDownCalendar.js';
-import Hello from '../components/Hello.js';
-import menu from '../images/HamburgerMenu.svg';
+import { nurses } from '../json/nurses'
 
 
-export const RoomHistoryPage = () => {
+
+export const RoomHistoryPage  = () => {
+
+    
+
     return (
         <>
             <MainNavBar></MainNavBar>
@@ -18,22 +21,31 @@ export const RoomHistoryPage = () => {
                 
                 <div><p id="assignmentHistoryText">Assignment History</p></div>
                 <div className="dropdownDiv d-flex justify-content-between">
-                    <select className="form-select defaultOption" aria-label="Default select example">
-                                <option defaultValue>Choose a nurse</option>
-                                <option className="selectOption" value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                        </select>
-                        <select className="form-select defaultOption" aria-label="Default select example">
+                <span className="dropdown">
+                            <button className="btn dropButton dropDownCal" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Choose a nurse
+                            </button>
+                            <div  className="dropdown-menu dropDownContainer dropDownCalContainer" aria-labelledby="dropdownMenuButton">
+                                {nurses.map((data, key) => {
+                                        return (
+
+                                            
+                                            <div className="nurseDiv" key={key}><img className="nurseImage" src={data.image} alt="nurse image"/><p className="nurseText"> {data.firstName} {data.lastName}</p></div>
+                                        );
+                                    })}
+                            </div>
+                        </span>
+                        <select className="form-select dropButtonText" aria-label="Default select example">
                                 <option defaultValue>Choose a room</option>
-                                <option className="selectOption" value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option className="selectOption" value="1">Room 1: 2 Beds</option>
+                                <option value="2">Room 2: 1 Bed</option>
+                                <option value="3">Room 3: 2 Beds</option>
+                                
                                 
                         </select>
                         <span className="dropdown">
-                            <button className="btn dropDownCal" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <p>Choose a date</p>
+                            <button className="btn dropButton dropDownCal" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Choose a date
                             </button>
                             <div  className="dropdown-menu  dropDownCalContainer" aria-labelledby="dropdownMenuButton">
                                         <div className="cal">
@@ -42,6 +54,7 @@ export const RoomHistoryPage = () => {
                             </div>
                         </span>
                 </div>
+                
                 <button id="runButton" className="float-right btn btn-success">Run</button>
                 <div><p id="recentAssign">Recent Assignment History</p><img src={greenFile}/><a id="csvDownloadLink">Download All History CSV</a></div>
                 <table id="nurseTable" className="table">

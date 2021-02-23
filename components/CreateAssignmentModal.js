@@ -40,7 +40,7 @@ export const CreateAssignmentModal = () => {
                 <div className="container mx-auto outerBox">
                     <div className="header">
                         <p className="modalHeader">Create Assignment</p>
-                        <button type="button" className="btn-close closeButton" aria-label="Close"><img src={exitButton}></img></button>
+                        <button type="button" className="btn-close closeButton" aria-label="Close"><img src={exitButton} alt="button to close window"></img></button>
                     </div>
                     <select className="form-select defaultOption" aria-label="Default select example">
                         <option defaultValue>Choose a nurse</option>
