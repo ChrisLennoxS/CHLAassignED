@@ -44,9 +44,6 @@ export const MainNavBar = () => {
                             <img className="navItem" src={people}/>
                             <a className=" navItem" href="#">Create/ Edit View</a>
                         </div>
-                        <div>
-                            <Hello></Hello>
-                        </div>
                     </div>
                 </div>
             </span>

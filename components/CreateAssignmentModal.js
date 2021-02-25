@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import styled from 'styled-components';
 import exitButton from '../images/iconfinder_icons_exit_1564505 1.svg';
 import '../css/CreateAssignmentModal.css';
+import { NurseDropdown} from '../components/NurseDropDown'
 
 
 
@@ -42,12 +43,8 @@ export const CreateAssignmentModal = () => {
                         <p className="modalHeader">Create Assignment</p>
                         <button type="button" className="btn-close closeButton" aria-label="Close"><img src={exitButton} alt="button to close window"></img></button>
                     </div>
-                    <select className="form-select defaultOption" aria-label="Default select example">
-                        <option defaultValue>Choose a nurse</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
+                    <NurseDropdown className="nurses"></NurseDropdown>
+                    
                     <select className="form-select defaultOption" aria-label="Default select example">
                         <option defaultValue>Choose a room</option>
                         <option className="selectOption" value="1">One</option>

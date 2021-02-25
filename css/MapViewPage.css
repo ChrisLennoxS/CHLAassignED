@@ -1,8 +1,10 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
 
-
-#outermostDiv {
+#outermostDiv{
     margin-top: 70px;
+    margin-bottom: 70px;
 }
+
 
 .row {
     margin-top: 2%;
@@ -14,14 +16,27 @@
     height: 210px;
     width: 366px;
     display: block;
-    
+   
+}
 
+
+#middleRowDiv {
+
+    height: 313px;
     
 }
 
-#middleRowDiv {
-    height: 313px;
+#outermostDiv div{
     
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    color: #000000;
 }
 
 .rooms{
@@ -29,6 +44,8 @@
     margin-right: auto;
     margin-left: auto;
     height: 210px;
+   
+    
 }
 
 
@@ -38,11 +55,12 @@
 }
 
 .roomTwoThree {
+
     width: 156px;
-    
     display: inline-block;
     margin-right: auto;
     margin-left: auto;
+
 }
 
 #roomFive {
@@ -72,4 +90,19 @@
 
 .leftAlignedRooms {
     margin-left: 0px;
+}
+
+
+.roomAssign {
+    
+    padding: 5px 5px;
+}
+
+#outermostDiv .roomAssign:hover {
+    outline: 0px solid transparent;
+    padding: -5px -5px;
+    border: 5px solid #5DB94C;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    
 }

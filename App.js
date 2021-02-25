@@ -15,7 +15,7 @@ function App() {
       <Route path="/room-history" component={RoomHistoryPage }></Route>
       <Route path="/map-view" component={MapViewPage}></Route>
       <Route path="/create-assignment" component={CreateAssignmentModal}></Route>
-      <Route path="/floor-plan"></Route>
+      
     </Router>
     </>
   );
