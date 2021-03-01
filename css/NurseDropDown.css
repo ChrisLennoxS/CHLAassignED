@@ -29,7 +29,16 @@ color: #000000;
     padding-top: 4%;
     padding-bottom: 4%;
     padding-left: 10%;
+    z-index: 5;
     
+}
+
+.nurseDiv.nurseImage {
+  z-index: -1;
+}
+
+.nurseDiv.nurseText {
+  z-index: -1;
 }
 
 .nurseDiv:hover {

@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
+
 input {
     width: 350px;
     height: 50px;
@@ -17,7 +19,7 @@ input {
 
 .assignedLogo {
   margin-top: 35%;
-  width: 356px;
+  width: 350px;
   height: 68px;
   margin-bottom: 15%;
 }
@@ -30,6 +32,10 @@ input {
   margin-bottom: 26%;
     
   
+}
+
+button {
+  margin-right: -4%;
 }
 
 
@@ -56,4 +62,30 @@ input {
   text-align: center;
   margin-top: 12%;
   margin-bottom: 5%;
+}
+
+.errorDiv {
+  position: absolute;
+  width: 350px;
+  height: 50px;
+  display: flex;
+  
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  
+  justify-content: center;
+  margin-top: 3%;
+
+  background-color: #BE3434;;
+  color: #FFFFFF;
+}
+
+.errorDiv p {
+  margin-top: 4.5%;
+  height: 19px;
 }

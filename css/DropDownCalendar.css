@@ -1,6 +1,8 @@
 .dateChooser {
-    width: 70px;
+    width: 34px;
     margin-bottom: 0;
+    margin-left: 4px;
+    margin-right: -2px;
 }
 
 .monthDayDropDown {
@@ -13,4 +15,12 @@
     /* Best to include the browser prefix for cross-browser compatibility */
     -webkit-appearance: none;
     -moz-appearance: none;
+}
+
+.downArrow {
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    margin-left: 10%;
+    margin-top: -5%;
 }

@@ -11,7 +11,7 @@ import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'jquery/dist/jquery.min.js';
-import Hello from '../components/Hello.js';
+
 
 export const MainNavBar = () => {
     return (
@@ -38,7 +38,7 @@ export const MainNavBar = () => {
                         </div >
                         <div className="dropdown-item">
                             <img className="navItem" src={rewind}/>
-                            <a className=" navItem" href="#">Assignment History</a>
+                            <a className=" navItem" href="/room-history">Assignment History</a>
                         </div>
                         <div className="dropdown-item">
                             <img className="navItem" src={people}/>

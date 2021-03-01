@@ -12,9 +12,10 @@ function App() {
     <>
     <Router>
       <Route path="/sign-in" component={LoginModal }></Route>
-      <Route path="/room-history" component={RoomHistoryPage }></Route>
-      <Route path="/map-view" component={MapViewPage}></Route>
-      <Route path="/create-assignment" component={CreateAssignmentModal}></Route>
+      <Route path="/room-history" component={RoomHistoryPage } exact></Route>
+      <Route path="/map-view" component={MapViewPage} exact></Route>
+      <Route path="/create-assignment" component={CreateAssignmentModal} exact></Route>
+      <Route path="/" component={LoginModal }exact></Route>
       
     </Router>
     </>

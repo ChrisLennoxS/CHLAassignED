@@ -2,6 +2,7 @@ import React from 'react';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import '../css/DropDownCalendar.css';
+import  triangle  from '../images/triangle.svg';
 
 const currentYear = new Date().getFullYear();
 const fromMonth = new Date(currentYear, 0);
@@ -9,6 +10,9 @@ const toMonth = new Date(currentYear + 10, 11);
 
 function YearMonthForm({ date, localeUtils, onChange }) {
   const months = localeUtils.getMonths();
+  console.log(months)
+  months.map((element, index) => months[index] = element.slice(0,3).toUpperCase())
+  console.log(months)
 
   const years = [];
   for (let i = fromMonth.getFullYear(); i <= toMonth.getFullYear(); i += 1) {
@@ -29,7 +33,9 @@ function YearMonthForm({ date, localeUtils, onChange }) {
           </option>
         ))}
       </select>
+
       <span>&bull;</span>
+
       <select className="dateChooser monthDayDropDown" name="year" onChange={handleChange} value={date.getFullYear()}>
         {years.map(year => (
           <option key={year} value={year}>
@@ -37,7 +43,9 @@ function YearMonthForm({ date, localeUtils, onChange }) {
           </option>
         ))}
       </select>
+      <span><img className="downArrow" src={triangle}/></span>
     </form>
+    
   );
 }
 
@@ -48,6 +56,7 @@ export default class Example extends React.Component {
     this.state = {
       month: fromMonth,
     };
+    console.log(YearMonthForm.months)
   }
 
   handleYearMonthChange(month) {
@@ -73,3 +82,5 @@ export default class Example extends React.Component {
     );
   }
 }
+
+/* <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */
