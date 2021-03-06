@@ -16,7 +16,7 @@
     top: 0px;
     right: 0px;
     left: 0px;
-    
+    z-index: 2;
 }
 
 p, .image {
@@ -68,7 +68,7 @@ color: #707070;
 }
 
 .menuBox {
-    z-index: -1;
+    z-index: 1;
     margin-top: 25%;
     margin-right: 10%;
     border-top-left-radius: 0;
@@ -76,7 +76,8 @@ color: #707070;
     border-left: none;
     background: rgba(247, 250, 251, 0.8);
     width: 267px;
-    height: 279px;
+    height: 295
+    px;
     box-shadow: inset 0px 4px 2px 0px rgba(0, 0, 0, 0.25);
     border: none;
     

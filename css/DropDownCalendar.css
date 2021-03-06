@@ -17,10 +17,18 @@
     -moz-appearance: none;
 }
 
+#yearDropDown {
+    width: 80px;
+}
+
 .downArrow {
     width: 10px;
     height: 10px;
     transform: rotate(45deg);
-    margin-left: 10%;
+    margin-left: -15%;
     margin-top: -5%;
+}
+
+span {
+    margin-left: 3.5px;
 }

@@ -7,10 +7,16 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
 
 
-const userInfo = {
-    email: "email",
+const userInfo = [{
+    email: "nurse",
+    password: "password"
+},
+{   
+    email: "chargeNurse",
     password: "password"
 }
+]
+
 
 const Background = styled.div`
     width: 100%;
@@ -49,7 +55,7 @@ export const LoginModal = () => {
         setError("")
         emailRef.style.borderColor="black"
         passwordRef.style.borderColor="black"
-        if(userInput.email === userInfo.email && userInput.password === userInfo.password){
+        if((userInput.email === userInfo[0].email && userInput.password === userInfo[0].password) || (userInput.email === userInfo[1].email && userInput.password === userInfo[1].password)){
             setError(<div className="errorDiv" style={{ backgroundColor: "#5DB94C"}}><p>Success! Logging you in.</p></div>)
             console.log(<div>Success! Logging you in.</div>);
             setTimeout(() => {
@@ -58,20 +64,20 @@ export const LoginModal = () => {
             
                    
             
-        }else if (userInput.email !== userInfo.email && userInput.password !== userInfo.password){
+        }else if ((userInput.email !== userInfo[0].email && userInput.password !== userInfo[0].password) && (userInput.email !== userInfo[1].email && userInput.password !== userInfo[1].password)){
             setError(<div className="errorDiv"><p>Invalid Inputs. Please try again</p></div>)
             console.log("Invalid Inputs. Please try again")
             emailRef.style.borderColor="red"
             passwordRef.style.borderColor="red"
             return(<div>Invalid Inputs. Please try again</div>)
-        }else if(userInput.email !== userInfo.email){
+        }else if((userInput.email !== userInfo[0].email) && (userInput.email !== userInfo[1].email)){
             setError(<div className="errorDiv"><p>Username Incorrect. Please try again</p></div>)
             console.log(userInput.email)
             console.log(userInfo.email)
             console.log("Email is incorrect")
             emailRef.style.borderColor="red"
             return(<div>Username Incorrect. Please try again</div>)
-        }else if(userInput.password !== userInfo.password){
+        }else if((userInput.password !== userInfo[0].password) && (userInput.password !== userInfo[1].password)){
             setError(<div className="errorDiv"><p>Password Incorrect. Please try again</p></div>)
             passwordRef.style.borderColor="red"
             console.log("Password Incorrect. Please try again")

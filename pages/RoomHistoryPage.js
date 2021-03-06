@@ -6,16 +6,23 @@ import greenFile from '../images/greenFile.svg'
 import YearMonthForm  from '../components/DropDownCalendar.js';
 
 import { NurseDropdown} from '../components/NurseDropDown'
+import { RoomDropDown } from '../components/RoomDropDown.js';
 
 
 
 export const RoomHistoryPage  = () => {
 
-    
+    function enableCalendar() {
+        var element = document.getElementsByTagName("YearMonthForm");
+        console.log(element)
+        
+        //element.classList.remove("DayPicker--interactionDisabled");
+        console.log("hello")
+      }
 
     return (
         <>
-            <MainNavBar></MainNavBar>
+            <MainNavBar className="mainNav"></MainNavBar>
             <div className="container-fluid">
                 <div id="contents">
                     
@@ -23,14 +30,9 @@ export const RoomHistoryPage  = () => {
                 <div><p id="assignmentHistoryText">Assignment History</p></div>
                 <div className="dropdownDiv d-flex justify-content-between">
                     <NurseDropdown></NurseDropdown>
-                    <select className="form-select roomDropDown dropButtonText" aria-label="Default select example">
-                            <option defaultValue>Choose a room</option>
-                            <option className="selectOption" value="1">Room 1: 2 Beds</option>
-                            <option value="2">Room 2: 1 Bed</option>
-                            <option value="3">Room 3: 2 Beds</option>       
-                    </select>
+                    <RoomDropDown></RoomDropDown>
                     <span className="dropdown">
-                        <button className="btn dropButton dropDownCal" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button onClick={enableCalendar} className="btn dropButton dropDownCal" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Choose a date
                         </button>
                         <div  className="dropdown-menu  dropDownCalContainer" aria-labelledby="dropdownMenuButton">
@@ -80,6 +82,7 @@ export const RoomHistoryPage  = () => {
                 </div>
             </div>
             <MainFooter></MainFooter>
+            
         </>
     );
 }

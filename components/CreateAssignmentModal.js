@@ -1,20 +1,24 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import styled from 'styled-components';
 import exitButton from '../images/iconfinder_icons_exit_1564505 1.svg';
 import '../css/CreateAssignmentModal.css';
 import { NurseDropdown} from '../components/NurseDropDown'
+import {RoomDropDown} from '../components/RoomDropDown'
+
 
 
 
 const Background = styled.div`
     width: 100%;
-    height: 100%;
-    background: rgba(94,94,94,255);
+    height: 110%;
+    background: rgba(0,0,0,.65);
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index:1;
+    margin-top: -10%;
 `
 
 const ModalWrapper = styled.div`
@@ -33,6 +37,7 @@ const ModalWrapper = styled.div`
 `
 
 export const CreateAssignmentModal = () => {
+    
     return(
     <>  
         <Background>
@@ -43,14 +48,10 @@ export const CreateAssignmentModal = () => {
                         <p className="modalHeader">Create Assignment</p>
                         <button type="button" className="btn-close closeButton" aria-label="Close"><img src={exitButton} alt="button to close window"></img></button>
                     </div>
-                    <NurseDropdown className="nurses"></NurseDropdown>
+                    <div  id="nurses"><NurseDropdown  id="nurses"></NurseDropdown></div>
+                    <div  id="roomsDropDown"><RoomDropDown className="roomsDropDown"></RoomDropDown></div>
                     
-                    <select className="form-select defaultOption" aria-label="Default select example">
-                        <option defaultValue>Choose a room</option>
-                        <option className="selectOption" value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
+                    
                     <div className="modalContent assignButton"><button className="float-right btn btn-success">Assign</button></div>
                     
                 </div>

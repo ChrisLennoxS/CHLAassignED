@@ -11,6 +11,12 @@ import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'jquery/dist/jquery.min.js';
+import logout from '../images/logout.svg';
+/*
+ *<div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" 
+  title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" 
+  title="Flaticon">www.flaticon.com</a></div> log out symbol
+ */
 
 
 export const MainNavBar = () => {
@@ -43,6 +49,10 @@ export const MainNavBar = () => {
                         <div className="dropdown-item">
                             <img className="navItem" src={people}/>
                             <a className=" navItem" href="#">Create/ Edit View</a>
+                        </div>
+                        <div className="dropdown-item">
+                            <img className="navItem" src={logout}/>
+                            <a className=" navItem" href="/sign-in">Log Out</a>
                         </div>
                     </div>
                 </div>

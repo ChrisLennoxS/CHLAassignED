@@ -10,9 +10,8 @@ const toMonth = new Date(currentYear + 10, 11);
 
 function YearMonthForm({ date, localeUtils, onChange }) {
   const months = localeUtils.getMonths();
-  console.log(months)
   months.map((element, index) => months[index] = element.slice(0,3).toUpperCase())
-  console.log(months)
+  
 
   const years = [];
   for (let i = fromMonth.getFullYear(); i <= toMonth.getFullYear(); i += 1) {
@@ -36,7 +35,7 @@ function YearMonthForm({ date, localeUtils, onChange }) {
 
       <span>&bull;</span>
 
-      <select className="dateChooser monthDayDropDown" name="year" onChange={handleChange} value={date.getFullYear()}>
+      <select id="yearDropDown" className="dateChooser monthDayDropDown" name="year" onChange={handleChange} value={date.getFullYear()}>
         {years.map(year => (
           <option key={year} value={year}>
             {year}
@@ -66,7 +65,9 @@ export default class Example extends React.Component {
   render() {
     return (
       <div className="YearNavigation">
-        <DayPicker
+        <DayPicker 
+        
+          className="DayPicker--interactionEnabled"
           month={this.state.month}
           fromMonth={fromMonth}
           toMonth={toMonth}

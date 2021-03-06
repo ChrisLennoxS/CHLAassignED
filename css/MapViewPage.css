@@ -1,14 +1,43 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
 
-#outermostDiv{
-    margin-top: 70px;
-    margin-bottom: 70px;
+nav {
+    z-index: 10;
+    position: absolute;
+    
 }
 
+footer {
+    z-index: 1;
+    position:absolute;
+}
+
+#outermostDiv{
+    margin-top: 70px;
+    margin-bottom: 20%;
+    
+    
+}
+
+
+.roomImg {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 52.5px;
+    
+    height:59.71px;
+    width: 59.71px;
+}
+
+#roomFiveImage {
+    margin-top: 96.65px;
+}
 
 .row {
     margin-top: 2%;
     margin-bottom: 2%;
+    
+   
 }
 
 .roomDiv{
@@ -16,13 +45,29 @@
     height: 210px;
     width: 366px;
     display: block;
+    
+
+    padding-bottom: 6%;
+    margin-left: 5%;
+    margin-right: -5%;
+    z-index: 0;
+    height: 45px;
+    width: 345px;
+    
    
 }
+
+.roomDiv:hover{
+    background-color: transparent;
+}
+
+
 
 
 #middleRowDiv {
 
-    height: 313px;
+    height: 413px;
+    margin-top: 8%;
     
 }
 
@@ -66,6 +111,7 @@
 #roomFive {
     height:313px;
     width: 207px;
+    margin-right: -25px;
 }
 
 .roomFourSix {
@@ -73,19 +119,28 @@
 }
 
 #circleDiv {
-    width: 366px;
+    width: 326px;
+    margin-left: -16px;
 }
 
 #circleRoom {
     border-radius: 50%;
     width: 244px;
     height: 244px;
+    margin-right: 18%;
    
+}
+
+.centerSpace {
+    width:345px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .rightAlignedRooms {
     margin-right: 0px;
     margin-left: 7.5%;
+    right: 0px;
 }
 
 .leftAlignedRooms {
@@ -105,4 +160,10 @@
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     
+}
+
+
+#createAssignmentModal {
+    z-index: 1;
+    margin-top: -10%;
 }

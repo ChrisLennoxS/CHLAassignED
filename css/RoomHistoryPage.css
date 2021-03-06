@@ -107,6 +107,7 @@
 
 .dropdown {
     height: 50px;
+    z-index: 0;
 }
 
 .cal {
@@ -123,3 +124,6 @@
     
 }
 
+.mainNav {
+    z-index: 2;
+}

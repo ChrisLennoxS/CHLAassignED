@@ -89,7 +89,7 @@ select::after{
 .assignButton {
     justify-content: flex-end;
     overflow: auto;
-    margin-top: -5%;
+    margin-top: 5%;
     
 }
 
@@ -122,3 +122,13 @@ select::after{
 .modalContent {
     display: block ;
   }
+
+
+#nurses {
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+#roomsDropDown {
+    z-index: -1;
+}
