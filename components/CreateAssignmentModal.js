@@ -36,8 +36,9 @@ const ModalWrapper = styled.div`
     
 `
 
-export const CreateAssignmentModal = () => {
-    
+export const CreateAssignmentModal = (props) => {
+     const [roomSelected, setRoomSelected] = useState(null);
+     
     return(
     <>  
         <Background>
@@ -46,10 +47,10 @@ export const CreateAssignmentModal = () => {
                 <div className="container mx-auto outerBox">
                     <div className="header">
                         <p className="modalHeader">Create Assignment</p>
-                        <button type="button" className="btn-close closeButton" aria-label="Close"><img src={exitButton} alt="button to close window"></img></button>
+                        <button type="button" onClick={() => props.showCreateModal(false)} className="btn-close closeButton" aria-label="Close"><img src={exitButton} alt="button to close window"></img></button>
                     </div>
                     <div  id="nurses"><NurseDropdown  id="nurses"></NurseDropdown></div>
-                    <div  id="roomsDropDown"><RoomDropDown className="roomsDropDown"></RoomDropDown></div>
+                    <div  id="roomsDropDown"><RoomDropDown selectedRoom={props.selectedRoom} className="roomsDropDown"></RoomDropDown></div>
                     
                     
                     <div className="modalContent assignButton"><button className="float-right btn btn-success">Assign</button></div>

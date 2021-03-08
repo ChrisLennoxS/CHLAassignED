@@ -9,6 +9,7 @@ export const NurseDropdown = () => {
     const [content, setContent] = useState("Choose a nurse")
     const [currentNurseIndex, setCurrentNurseIndex] = useState(1)
     const [clickCount, setClickCount] = useState(0)
+    const [showDefaultArrow, setShowDefaultArrow] = useState(true)
     
     
     
@@ -16,13 +17,13 @@ export const NurseDropdown = () => {
     useEffect(() => {
         
         
-        setContent(<div className="chosenNurseDiv" ><img className="nurseImage" src={nurses[currentNurseIndex].image} alt="nurse image"/><p onClick={(e) => e.bubbles} className="nurseText"> {nurses[currentNurseIndex].firstName} {nurses[currentNurseIndex].lastName} </p> <img id="nurseDropDownSelectChevron" src={dropDownArrow}></img></div>)
-        
+        setContent(<div className="chosenNurseDiv d-flex justify-content-between" ><div className="currentSelectedNurseDropDown"><img className="nurseImage" src={nurses[currentNurseIndex].image} alt="nurse image"/><p onClick={(e) => e.bubbles} className="nurseText"> {nurses[currentNurseIndex].firstName} {nurses[currentNurseIndex].lastName} </p></div> <img id="nurseDropDownSelectChevron" src={dropDownArrow}></img></div>)
+        setShowDefaultArrow(false)
     }, [clickCount])
 
     useEffect(() => {
         
-        setContent("Choose a nurse")
+        setContent(<div className="chosenNurseDiv d-flex justify-content-between" ><div className="currentSelectedNurseDropDown"><p className="defaultOptionNurseDropDown"> Choose a nurse </p></div> <img id="nurseDropDownSelectChevron" src={dropDownArrow}></img></div>)
     }, [])
 
 //console.log(e.currentTarget)}
@@ -32,6 +33,7 @@ export const NurseDropdown = () => {
             <span className="">
                             <button className="btn nurseDropButton " type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {content} 
+                                
                             </button>
                             <div  className="dropdown-menu dropDownContainer " aria-labelledby="dropdownMenuButton">
                                 {nurses.map((data, key) => {

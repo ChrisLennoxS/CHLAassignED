@@ -113,6 +113,14 @@ color: #000000;
   #nurseDropDownSelectChevron {
     width: 20px;
     height: 12px;
-    position:sticky;
-    right: 300px;
+    margin-top: 15px;
+  }
+
+  .currentSelectedNurseDropDown {
+    width: 250px;
+  }
+
+  .defaultOptionNurseDropDown {
+    margin-top: 3%;
+    margin-left: -6%;
   }

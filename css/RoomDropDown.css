@@ -113,9 +113,6 @@ color: #000000;
   #roomDropDownSelectChevron {
     width: 20px;
     height: 12px;
-    position:sticky;
-    bottom:50px;
-    right:300px;
-    left:50px;
     margin-top: 2%;
+    margin-right: 2%;
   }

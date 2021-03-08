@@ -19,7 +19,7 @@ import logout from '../images/logout.svg';
  */
 
 
-export const MainNavBar = () => {
+export const MainNavBar = (props) => {
     return (
         <>
         
@@ -36,7 +36,7 @@ export const MainNavBar = () => {
                     <div className="navItemBox">
                         <div className="dropdown-item"> 
                             <img className="navItem" src={plus}/>
-                            <a className=" navItem" href="#">Create Assignment</a>
+                            <a className=" navItem" onClick={() => props.showCreateModal(true)} href="#">Create Assignment</a>
                         </div>
                         <div className="dropdown-item">
                             <img className="navItem" src={mapWithPin}/>   
