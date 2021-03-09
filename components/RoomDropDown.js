@@ -42,7 +42,7 @@ export const RoomDropDown = (props) => {
                             <div  className="dropdown-menu dropDownContainer " aria-labelledby="dropdownMenuButton">
                                 {floorRooms.map((data, key) => {
                                         return (
-                                            <div  onClick={(e) => { setCurrentRoomIndex(key); setClickCount(clickCount+1)}} className="roomChoiceDiv" key={key}><p onClick={(e) => e.bubbles} className="roomText"><span className="boldedText"> {data.room}: </span>{data.numOfBeds}</p></div>
+                                            <div  onClick={(e) => { setCurrentRoomIndex(key); setClickCount(clickCount+1); props.overrideParentRoomChange(key)}} className="roomChoiceDiv" key={key}><p onClick={(e) => e.bubbles} className="roomText"><span className="boldedText"> {data.room}: </span>{data.numOfBeds}</p></div>
                                         );
                                     })}
                             </div>

@@ -29,7 +29,7 @@ export const RoomHistoryPage  = () => {
                 
                 <div><p id="assignmentHistoryText">Assignment History</p></div>
                 <div className="dropdownDiv d-flex justify-content-between">
-                    <NurseDropdown></NurseDropdown>
+                    <NurseDropdown selectedNurse={() => console.log()}></NurseDropdown>
                     <RoomDropDown></RoomDropDown>
                     <span className="dropdown">
                         <button onClick={enableCalendar} className="btn dropButton dropDownCal" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

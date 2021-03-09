@@ -37,8 +37,10 @@ const ModalWrapper = styled.div`
 `
 
 export const CreateAssignmentModal = (props) => {
-     const [roomSelected, setRoomSelected] = useState(null);
+
+
      
+
     return(
     <>  
         <Background>
@@ -47,13 +49,13 @@ export const CreateAssignmentModal = (props) => {
                 <div className="container mx-auto outerBox">
                     <div className="header">
                         <p className="modalHeader">Create Assignment</p>
-                        <button type="button" onClick={() => props.showCreateModal(false)} className="btn-close closeButton" aria-label="Close"><img src={exitButton} alt="button to close window"></img></button>
+                        <button type="button" onClick={() => {props.showCreateModal(false); }} className="btn-close closeButton" aria-label="Close"><img src={exitButton} alt="button to close window"></img></button>
                     </div>
-                    <div  id="nurses"><NurseDropdown  id="nurses"></NurseDropdown></div>
-                    <div  id="roomsDropDown"><RoomDropDown selectedRoom={props.selectedRoom} className="roomsDropDown"></RoomDropDown></div>
+
+                    <div  id="nurses"><NurseDropdown selectedNurse={props.selectedNurse} id="nurses"></NurseDropdown></div>
+                    <div  id="roomsDropDown"><RoomDropDown overrideParentRoomChange={props.overrideParentRoomChange} selectedRoom={props.selectedRoom}  className="roomsDropDown"></RoomDropDown></div>
                     
-                    
-                    <div className="modalContent assignButton"><button className="float-right btn btn-success">Assign</button></div>
+                    <div className="modalContent assignButton"><button onClick={() => {props.showCreateModal(false); props.parentClickCount()}} className="float-right btn btn-success">Assign</button></div>
                     
                 </div>
             </ModalWrapper>
