@@ -102,7 +102,7 @@
 }
 
 .dropDownCalContainer {
-    width: 375px;
+    width: 575px;
 }
 
 .dropdown {
@@ -111,7 +111,9 @@
 }
 
 .cal {
-    margin-left: 13.5%;
+    margin-left: 3.5%;
+    width:800px;
+
 }
 
 .table td {

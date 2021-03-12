@@ -1,134 +1,115 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
 
-
-
 .outerBox {
-    width: 377px;
-    height: 304px;
-    padding-left: 0;
-    padding-right: 0;
+	width: 377px;
+	height: 304px;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .header {
-    
-    margin-bottom: 10%;
+	margin-bottom: 10%;
 }
 
 .modalHeader {
-    
-    width: 217px;
-    height: 29px;
-    left: 550px;
-    top: 352px;
+	width: 217px;
+	height: 29px;
+	left: 550px;
+	top: 352px;
 
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 25px;
-    line-height: 29px;
-    display: inline;
-    color: #000000;
-    vertical-align: middle;
-    
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 25px;
+	line-height: 29px;
+	display: inline;
+	color: #000000;
+	vertical-align: middle;
 }
 
 .closeButton {
-    background-color: transparent;
-    border: none;
-    display: flex;
-    float: right;
-    vertical-align: middle;
-    
+	background-color: transparent;
+	border: none;
+	display: flex;
+	float: right;
+	vertical-align: middle;
 }
-
-
 
 select {
-    
-    width: 375px;
-    height: 50px;
-    left: 550px;
-    top: 432px;
+	width: 375px;
+	height: 50px;
+	left: 550px;
+	top: 432px;
 
-    background: #FFFFFF;
-    border: 1px solid #F4F4F4;
-    box-sizing: border-box;
-    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.11);
-    border-radius: 5px;
+	background: #ffffff;
+	border: 1px solid #f4f4f4;
+	box-sizing: border-box;
+	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.11);
+	border-radius: 5px;
 
-    margin-top: 33px;
-    margin-bottom: 42px;
+	margin-top: 33px;
+	margin-bottom: 42px;
 
-    appearance: none;/* hide the default arrow */
-    background: 95%  url('../images/selectChevron.svg')  no-repeat  transparent;
-    
-    
-    /* Best to include the browser prefix for cross-browser compatibility */
-    -webkit-appearance: none;
-    -moz-appearance: none;
+	appearance: none; /* hide the default arrow */
+	background: 95% url('../images/selectChevron.svg') no-repeat transparent;
 
-    
-    
-
+	/* Best to include the browser prefix for cross-browser compatibility */
+	-webkit-appearance: none;
+	-moz-appearance: none;
 }
 
-select::after{
-    height: 40px;
+select::after {
+	height: 40px;
 
-    
-
-    content: "\25bc"; /* HTML symbol */
-    /* Reposition */
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0 10px;
-    line-height: 40px; /* Vertical center text */
+	content: '\25bc'; /* HTML symbol */
+	/* Reposition */
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0 10px;
+	line-height: 40px; /* Vertical center text */
 }
 
 .assignButton {
-    justify-content: flex-end;
-    overflow: auto;
-    margin-top: 5%;
-    
+	justify-content: flex-end;
+	overflow: auto;
+	margin-top: 5%;
 }
 
 .assignButton::after {
-    clear: both;
-    overflow: auto;
-  }
+	clear: both;
+	overflow: auto;
+}
 
 .defaultOption {
-    padding-left: 5.5%;
+	padding-left: 5.5%;
 }
 
 .selectOption {
-    width: 111px;
-    height: 19px;
-    left: 571px;
-    top: 447px;
+	width: 111px;
+	height: 19px;
+	left: 571px;
+	top: 447px;
 
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
-    /* identical to box height */
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	/* identical to box height */
 
-
-    color: #000000;
+	color: #000000;
 }
 
 .modalContent {
-    display: block ;
-  }
-
+	display: block;
+}
 
 #nurses {
-    margin-top: 10%;
-    margin-bottom: 5%;
+	margin-top: 10%;
+	margin-bottom: 5%;
 }
 
 #roomsDropDown {
-    z-index: -1;
+	z-index: -1;
 }

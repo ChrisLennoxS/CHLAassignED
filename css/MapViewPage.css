@@ -1,169 +1,141 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
 
 nav {
-    z-index: 10;
-    position: absolute;
-    
+	z-index: 10;
+	position: absolute;
 }
 
 footer {
-    z-index: 1;
-    position:absolute;
+	z-index: 1;
+	position: absolute;
 }
 
-#outermostDiv{
-    margin-top: 70px;
-    margin-bottom: 20%;
-    
-    
+#outermostDiv {
+	margin-top: 70px;
+	margin-bottom: 20%;
 }
-
 
 .roomImg {
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 52.5px;
-    border-radius: 50px;
-    height:59.71px;
-    width: 59.71px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 52.5px;
+	border-radius: 50px;
+	height: 59.71px;
+	width: 59.71px;
 }
 
 #roomFiveImage {
-    margin-top: 96.65px;
+	margin-top: 96.65px;
 }
 
 .row {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    
-   
+	margin-top: 2%;
+	margin-bottom: 2%;
 }
 
-.roomDiv{
-    
-    height: 210px;
-    width: 366px;
-    display: block;
-    
+.roomDiv {
+	height: 210px;
+	width: 366px;
+	display: block;
 
-    padding-bottom: 6%;
-    margin-left: 5%;
-    margin-right: -5%;
-    z-index: 0;
-    height: 45px;
-    width: 345px;
-    
-   
+	padding-bottom: 6%;
+	margin-left: 5%;
+	margin-right: -5%;
+	z-index: 0;
+	height: 45px;
+	width: 345px;
 }
 
-.roomDiv:hover{
-    background-color: transparent;
+.roomDiv:hover {
+	background-color: transparent;
 }
-
-
-
 
 #middleRowDiv {
-
-    height: 413px;
-    margin-top: 8%;
-    
+	height: 413px;
+	margin-top: 8%;
 }
 
-#outermostDiv div{
-    
+#outermostDiv div {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 16px;
+	line-height: 19px;
+	/* identical to box height */
 
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 16px;
-    line-height: 19px;
-    /* identical to box height */
-
-    color: #000000;
+	color: #000000;
 }
 
-.rooms{
-    background-color: #DCE1E2;
-    margin-right: auto;
-    margin-left: auto;
-    height: 210px;
-   
-    
+.rooms {
+	background-color: #dce1e2;
+	margin-right: auto;
+	margin-left: auto;
+	height: 210px;
 }
-
 
 .roomOneSevenEight {
-    
-    width: 313px;
+	width: 313px;
 }
 
 .roomTwoThree {
-
-    width: 156px;
-    display: inline-block;
-    margin-right: auto;
-    margin-left: auto;
-
+	width: 156px;
+	display: inline-block;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 #roomFive {
-    height:313px;
-    width: 207px;
-    margin-right: -25px;
+	height: 313px;
+	width: 207px;
+	margin-right: -25px;
 }
 
 .roomFourSix {
-    width: 207px;
+	width: 207px;
 }
 
 #circleDiv {
-    width: 326px;
-    margin-left: -16px;
+	width: 326px;
+	margin-left: -16px;
 }
 
 #circleRoom {
-    border-radius: 50%;
-    width: 244px;
-    height: 244px;
-    margin-right: 18%;
-   
+	border-radius: 50%;
+	width: 244px;
+	height: 244px;
+	margin-right: 18%;
 }
 
 .centerSpace {
-    width:345px;
-    margin-right: auto;
-    margin-left: auto;
+	width: 345px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .rightAlignedRooms {
-    margin-right: 0px;
-    margin-left: 7.5%;
-    right: 0px;
+	margin-right: 0px;
+	margin-left: 7.5%;
+	right: 0px;
 }
 
 .leftAlignedRooms {
-    margin-left: 0px;
+	margin-left: 0px;
 }
 
-
 .roomAssign {
-    
-    padding: 5px 5px;
+	padding: 5px 5px;
 }
 
 #outermostDiv .roomAssign:hover {
-    outline: 0px solid transparent;
-    padding: -5px -5px;
-    border: 5px solid #5DB94C;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    
+	outline: 0px solid transparent;
+	padding: -5px -5px;
+	border: 5px solid #5db94c;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
-
 #createAssignmentModal {
-    z-index: 1;
-    margin-top: -10%;
+	z-index: 1;
+	margin-top: -10%;
 }

@@ -1,34 +1,33 @@
 .dateChooser {
-    width: 34px;
-    margin-bottom: 0;
-    margin-left: 4px;
-    margin-right: -2px;
+	width: 34px;
+	margin-bottom: 0;
+	margin-left: 4px;
+	margin-right: -2px;
 }
 
 .monthDayDropDown {
-    border: none;
-    box-shadow: none;
-    appearance: none;/* hide the default arrow */
-    background: none;
-    
-    
-    /* Best to include the browser prefix for cross-browser compatibility */
-    -webkit-appearance: none;
-    -moz-appearance: none;
+	border: none;
+	box-shadow: none;
+	appearance: none; /* hide the default arrow */
+	background: none;
+
+	/* Best to include the browser prefix for cross-browser compatibility */
+	-webkit-appearance: none;
+	-moz-appearance: none;
 }
 
 #yearDropDown {
-    width: 80px;
+	width: 80px;
 }
 
 .downArrow {
-    width: 10px;
-    height: 10px;
-    transform: rotate(45deg);
-    margin-left: -15%;
-    margin-top: -5%;
+	width: 10px;
+	height: 10px;
+	transform: rotate(45deg);
+	margin-left: -15%;
+	margin-top: -5%;
 }
 
 span {
-    margin-left: 3.5px;
+	margin-left: 3.5px;
 }

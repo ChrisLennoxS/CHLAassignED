@@ -1,91 +1,81 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
 
 input {
-    width: 350px;
-    height: 50px;
-    background: #FFFFFF;
-    border: 1px solid #F4F4F4;
-    box-sizing: border-box;
-    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.11);
-    border-radius: 5px;
-    
-  }
-
-
+	width: 350px;
+	height: 50px;
+	background: #ffffff;
+	border: 1px solid #f4f4f4;
+	box-sizing: border-box;
+	box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.11);
+	border-radius: 5px;
+}
 
 .modalContent {
-  display: block ;
+	display: block;
 }
 
 .assignedLogo {
-  margin-top: 35%;
-  width: 350px;
-  height: 68px;
-  margin-bottom: 15%;
+	margin-top: 35%;
+	width: 350px;
+	height: 68px;
+	margin-bottom: 15%;
 }
 
 .signIn {
-  justify-content: flex-end;
-  
-  overflow: auto;
-  margin-top: 7%;
-  margin-bottom: 26%;
-    
-  
+	justify-content: flex-end;
+
+	overflow: auto;
+	margin-top: 7%;
+	margin-bottom: 26%;
 }
 
 button {
-  margin-right: -4%;
+	margin-right: -4%;
 }
 
-
-
 .signIn::after {
-  clear: both;
-  overflow: auto;
+	clear: both;
+	overflow: auto;
 }
 
 .inpLabel {
-  margin-bottom: 0;
-  padding-bottom: 0em;
-  padding-left: 9px;
-  margin-top: 5%;
+	margin-bottom: 0;
+	padding-bottom: 0em;
+	padding-left: 9px;
+	margin-top: 5%;
 }
 
-
-
 .content {
-  clear: both;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  margin-top: 12%;
-  margin-bottom: 5%;
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 12%;
+	margin-bottom: 5%;
 }
 
 .errorDiv {
-  position: absolute;
-  width: 350px;
-  height: 50px;
-  display: flex;
-  
+	position: absolute;
+	width: 350px;
+	height: 50px;
+	display: flex;
 
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 16px;
-  line-height: 19px;
-  /* identical to box height */
-  
-  justify-content: center;
-  margin-top: 3%;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 16px;
+	line-height: 19px;
+	/* identical to box height */
 
-  background-color: #BE3434;;
-  color: #FFFFFF;
+	justify-content: center;
+	margin-top: 3%;
+
+	background-color: #be3434;
+	color: #ffffff;
 }
 
 .errorDiv p {
-  margin-top: 4.5%;
-  height: 19px;
+	margin-top: 4.5%;
+	height: 19px;
 }
