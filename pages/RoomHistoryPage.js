@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { MainFooter } from '../components/MainFooter.js';
 import { MainNavBar } from '../components/MainNavBar.js';
-import greenFile from '../images/greenFile.svg';
 import { NurseDropdown } from '../components/NurseDropDown';
 import { RoomDropDown } from '../components/RoomDropDown.js';
 import { CalendarDropDown } from '../components/CalendarDropDown.js';
-import { assignmentHistoryTable } from '../components/assignmentHistoryTable.js';
+import { AssignmentHistoryTable } from '../components/AssignmentHistoryTable.js';
+import greenFile from '../images/greenFile.svg';
 
 export const RoomHistoryPage = () => {
+	const [startDate, setStartDate] = useState(new Date(2021, 2, 1));
+	const [endDate, setEndDate] = useState(new Date(2021, 3, 15));
+
+	useEffect(() => {}, [startDate, endDate]);
+
 	return (
 		<>
 			<MainNavBar className='mainNav'></MainNavBar>
@@ -18,10 +23,17 @@ export const RoomHistoryPage = () => {
 						<p id='assignmentHistoryText'>Assignment History</p>
 					</div>
 					<div className='dropdownDiv d-flex justify-content-between'>
+						{/* 
+						<NurseDropdown
+							selectedNurse={() => console.log()}></NurseDropdown>*/}
+						<RoomDropDown className='roomsDropDown'></RoomDropDown>
 						<NurseDropdown
 							selectedNurse={() => console.log()}></NurseDropdown>
-						<RoomDropDown></RoomDropDown>
-						<CalendarDropDown></CalendarDropDown>
+						<CalendarDropDown
+							setStartDate={(start) => setStartDate(start)}
+							setEndDate={(end) =>
+								setEndDate(end)
+							}></CalendarDropDown>
 					</div>
 
 					<button
@@ -34,42 +46,11 @@ export const RoomHistoryPage = () => {
 						<img src={greenFile} />
 						<a id='csvDownloadLink'>Download All History CSV</a>
 					</div>
-					<table id='nurseTable' className='table'>
-						<thead>
-							<tr>
-								<th scope='col'>Nurse</th>
-								<th scope='col'>Room</th>
-								<th scope='col'>Date</th>
-								<th scope='col'>Start</th>
-								<th scope='col'>End</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope='row'>1</th>
-								<td>Mark</td>
-								<td>Otto</td>
-								<td>1:21</td>
-								<td>1:21</td>
-							</tr>
-							<tr>
-								<th scope='row'>2</th>
-								<td>Jacob</td>
-								<td>Thornton</td>
-								<td>1:21</td>
-								<td>1:21</td>
-							</tr>
-							<tr>
-								<th scope='row'>3</th>
-								<td>Larry the Bird</td>
-								<td>Thornton</td>
-								<td>1:21</td>
-								<td>1:21</td>
-							</tr>
-						</tbody>
-					</table>
+					<AssignmentHistoryTable
+						startDate={startDate}
+						endDate={endDate}
+						className='assignmentTable'></AssignmentHistoryTable>
 				</div>
-				<assignmentHistoryTable></assignmentHistoryTable>
 			</div>
 			<MainFooter></MainFooter>
 		</>

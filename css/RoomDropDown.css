@@ -27,7 +27,7 @@
 	padding-bottom: 6%;
 	margin-left: 5%;
 	margin-right: -5%;
-	z-index: -1;
+	
 	height: 45px;
 	width: 345px;
 }
@@ -39,9 +39,7 @@
 	z-index: 0;
 }
 
-.nurseRoomDiv.roomText {
-	z-index: -1;
-}
+
 
 .roomChoiceDiv:hover {
 	background-color: rgba(220, 225, 226, 0.5);
@@ -60,7 +58,7 @@
 	border-radius: 5px;
 	padding-left: 5%;
 	text-align: left;
-	z-index: -1;
+	
 	position: inherit;
 }
 

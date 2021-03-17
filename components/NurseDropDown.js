@@ -17,7 +17,7 @@ export const NurseDropdown = (props) => {
 					<img
 						className='nurseImage'
 						src={nurses[currentNurseIndex].image}
-						alt='nurse image'
+						alt='nurse'
 					/>
 					<p onClick={(e) => e.bubbles} className='nurseText'>
 						{' '}
@@ -25,7 +25,10 @@ export const NurseDropdown = (props) => {
 						{nurses[currentNurseIndex].lastName}{' '}
 					</p>
 				</div>{' '}
-				<img id='nurseDropDownSelectChevron' src={dropDownArrow}></img>
+				<img
+					id='nurseDropDownSelectChevron'
+					src={dropDownArrow}
+					alt=''></img>
 			</div>
 		);
 		setShowDefaultArrow(false);
@@ -50,7 +53,8 @@ export const NurseDropdown = (props) => {
 							</div>{' '}
 							<img
 								id='nurseDropDownSelectChevron'
-								src={dropDownArrow}></img>
+								src={dropDownArrow}
+								alt=''></img>
 						</div>
 				  )
 				: setContent(
@@ -59,7 +63,7 @@ export const NurseDropdown = (props) => {
 								<img
 									className='nurseImage'
 									src={nurses[currentNurseIndex].image}
-									alt='nurse image'
+									alt='nurse'
 								/>
 								<p
 									onClick={(e) => e.bubbles}
@@ -105,7 +109,7 @@ export const NurseDropdown = (props) => {
 								<img
 									className='nurseImage'
 									src={data.image}
-									alt='nurse image'
+									alt='nurse'
 								/>
 								<p
 									onClick={(e) => e.bubbles}

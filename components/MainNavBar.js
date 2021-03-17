@@ -48,7 +48,7 @@ export const MainNavBar = (props) => {
 							aria-labelledby='dropdownMenuButton'>
 							<div className='navItemBox'>
 								<div className='dropdown-item'>
-									<img className='navItem' src={plus} />
+									<img className='navItem' src={plus} alt=""/>
 									<a
 										className=' navItem'
 										onClick={

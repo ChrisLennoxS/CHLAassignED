@@ -36,8 +36,10 @@ export default class Example extends React.Component {
 			this.setState({
 				from: day,
 				to: null,
-				enteredTo: null,
+				enteredTo: day,
 			});
+				
+			
 		} else {
 			this.setState({
 				to: day,
@@ -49,7 +51,13 @@ export default class Example extends React.Component {
 					' - ' +
 					this.state.enteredTo.toLocaleDateString()
 			);
-			console.log(this.state.from, this.state.enteredTo);
+			//console.log(this.state.from, this.state.enteredTo);
+			const tempStart = this.state.from.toLocaleDateString().split("/")
+			const tempEnd = this.state.enteredTo.toLocaleDateString().split("/")
+			this.props.setStartDate(new Date(tempStart[2], tempStart[0], tempStart[1]) );
+			this.props.setEndDate(new Date(tempEnd[2], tempEnd[0], tempEnd[1]));
+			
+			
 		}
 	}
 
@@ -59,6 +67,7 @@ export default class Example extends React.Component {
 			this.setState({
 				enteredTo: day,
 			});
+			
 		}
 	}
 

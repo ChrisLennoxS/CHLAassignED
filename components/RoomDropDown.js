@@ -14,35 +14,39 @@ export const RoomDropDown = (props) => {
 			<div className='chosenRoomDiv d-flex justify-content-between'>
 				<div>
 					<p onClick={(e) => e.bubbles} className='roomText'>
-						{' '}
-						{floorRooms[currentRoomIndex].room}:{' '}
+						
+						{floorRooms[currentRoomIndex].room}{" : "}
 						{floorRooms[currentRoomIndex].numOfBeds}
 					</p>
 				</div>
-				<img id='roomDropDownSelectChevron' src={dropDownArrow}></img>
+				<img id='roomDropDownSelectChevron' src={dropDownArrow} alt=""></img>
 			</div>
 		);
 	}, [clickCount]);
 
 	useEffect(() => {
-		props.selectedRoom == null
+		(props.selectedRoom === undefined || props.selectedRoom === null)
 			? setContent(
-					<div className='chosenRoomDiv d-flex justify-content-between'>
-						<div>
+					<div onClick={console.log("blueee")} className='chosenRoomDiv d-flex justify-content-between'>
+						<div >
 							<p className='roomText'>Choose a room</p>
 						</div>
 						<img
 							id='roomDropDownSelectChevron'
 							src={dropDownArrow}></img>
+							{console.log(props.selectedRoom)}
 					</div>
 			  )
 			: setContent(
+				
 					<div className='chosenRoomDiv d-flex justify-content-between'>
+						{console.log("existss")}
+						{console.log(props.selectedRoom)}
 						<div>
 							<p onClick={(e) => e.bubbles} className='roomText'>
-								{' '}
-								{floorRooms[props.selectedRoom].room}:{' '}
-								{floorRooms[props.selectedRoom].numOfBeds}
+								
+								{floorRooms[props.selectedRoom]['room']}{" : "}
+								{floorRooms[props.selectedRoom]['numOfBeds']}
 							</p>
 						</div>
 						<img
@@ -74,17 +78,18 @@ export const RoomDropDown = (props) => {
 				{floorRooms.map((data, key) => {
 					return (
 						<div
-							onClick={(e) => {
-								setCurrentRoomIndex(key);
-								setClickCount(clickCount + 1);
-								props.overrideParentRoomChange(key);
-							}}
+							onClick={() => ([
+								setCurrentRoomIndex(key),
+								setClickCount(clickCount + 1),
+								(props.overrideParentRoomChange !== undefined) ? props.overrideParentRoomChange(key): null
+								 
+								
+							])}
 							className='roomChoiceDiv'
 							key={key}>
 							<p onClick={(e) => e.bubbles} className='roomText'>
 								<span className='boldedText'>
-									{' '}
-									{data.room}:{' '}
+									{data.room} {" : "}
 								</span>
 								{data.numOfBeds}
 							</p>

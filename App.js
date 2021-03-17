@@ -1,11 +1,10 @@
-import React, { Component }  from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import { LoginModal } from './components/LoginModal.js';
 import { RoomHistoryPage } from './pages/RoomHistoryPage.js';
 import {MapViewPage} from './pages/MapViewPage.js';
 import {CreateAssignmentModal} from './components/CreateAssignmentModal.js';
-import { MainFooter } from './components/MainFooter.js';
-import { MainNavBar } from './components/MainNavBar.js';
+
 
 function App() {
   return (

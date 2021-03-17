@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import '../css/LoginModal.css';
 import logoAssignED from '../images/Group 15.png';
 import logoCHLA from '../images/CHLA 1.svg';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Link } from 'react-router-dom';
+
 
 const userInfo = [
 	{

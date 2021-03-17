@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
-
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/CalendarDropDown.css';
-
 import dropDownArrow from '../images/selectChevron.svg';
-import DatePicker from 'react-date-picker';
 import YearMonthForm from '../components/DropDownCalendar';
 
 export const CalendarDropDown = (props) => {
@@ -66,6 +63,8 @@ export const CalendarDropDown = (props) => {
 					className='dropdown-menu calendarDropDownContainer '
 					aria-labelledby='dropdownMenuButton'>
 					<YearMonthForm
+						setStartDate={(newStartDate) => props.setStartDate(newStartDate)}
+						setEndDate={(newEndDate) => props.setEndDate(newEndDate)}
 						parentSetDate={(newDate) => setContent(newDate)}
 					/>
 				</div>
