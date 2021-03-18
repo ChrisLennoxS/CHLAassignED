@@ -46,46 +46,41 @@ export const MapViewPage = () => {
 			switch (selectedRoom) {
 				case 0:
 					setRoomOneImage(nurses[selectedNurse].image);
-					console.log(`the current selected nurse is${selectedRoom}`);
+					document.getElementById('roomOne').style.border = 'none';
 					break;
 				case 1:
 					setRoomTwoImage(nurses[selectedNurse].image);
-					console.log(`the current selected nurse is${selectedRoom}`);
+					document.getElementById('roomTwo').style.border = 'none';
 					break;
 				case 2:
 					setRoomThreeImage(nurses[selectedNurse].image);
-					console.log(`the current selected nurse is${selectedRoom}`);
+					document.getElementById('roomThree').style.border = 'none';
 					break;
 				case 3:
 					setRoomFourImage(nurses[selectedNurse].image);
-					console.log(`the current selected nurse is${selectedRoom}`);
+					document.getElementById('roomFour').style.border = 'none';
 					break;
 				case 4:
 					setRoomFiveImage(nurses[selectedNurse].image);
-					console.log(`the current selected nurse is${selectedRoom}`);
+					document.getElementById('roomFive').style.border = 'none';
 					break;
 				case 5:
 					setRoomSixImage(nurses[selectedNurse].image);
-					console.log(`the current selected nurse is${selectedRoom}`);
+					document.getElementById('roomSix').style.border = 'none';
 					break;
 				case 6:
 					setRoomSevenImage(nurses[selectedNurse].image);
-					console.log(`the current selected nurse is${selectedRoom}`);
+					document.getElementById('roomSeven').style.border = 'none';
 					break;
 				case 7:
 					setRoomEightImage(nurses[selectedNurse].image);
-					console.log(`the current selected nurse is${selectedRoom}`);
+					document.getElementById('roomEight').style.border = 'none';
 					break;
 			}
 		}
 		console.log(`the current selected nurse is${selectedNurse}`);
-		console.log('room changed');
+		console.log(clickCount);
 	}, [clickCount]);
-	/*
-    useEffect(() =>{
-        console.log(`click count is ${clickCount}`)
-    }, [clickCount])
-*/
 
 	return (
 		<>
@@ -119,6 +114,7 @@ export const MapViewPage = () => {
 					<div className='row d-flex justify-content-around'>
 						<div className='roomDiv'>
 							<div
+								id='roomOne'
 								onClick={() => {
 									setShowCreateAssignmentModal(true);
 									setSelectedRoom(0);
@@ -132,6 +128,7 @@ export const MapViewPage = () => {
 						</div>
 						<div className='roomDiv d-flex justify-content-around'>
 							<div
+								id='roomTwo'
 								onClick={() => {
 									setShowCreateAssignmentModal(true);
 									setSelectedRoom(1);
@@ -143,6 +140,7 @@ export const MapViewPage = () => {
 									src={roomTwoImage}></img>
 							</div>
 							<div
+								id='roomThree'
 								onClick={() => {
 									setShowCreateAssignmentModal(true);
 									setSelectedRoom(2);
@@ -156,6 +154,7 @@ export const MapViewPage = () => {
 						</div>
 						<div className='roomDiv'>
 							<div
+								id='roomFour'
 								onClick={() => {
 									setShowCreateAssignmentModal(true);
 									setSelectedRoom(3);
@@ -176,7 +175,7 @@ export const MapViewPage = () => {
 							className='roomOneSevenEight align-self-center'>
 							<div
 								id='circleRoom'
-								className='rooms roomAssign align-self-center'></div>
+								className='rooms  align-self-center'></div>
 						</div>
 						<div className='centerSpace'></div>
 						<div className=''>
@@ -198,6 +197,7 @@ export const MapViewPage = () => {
 					<div className='row'>
 						<div className='roomDiv'>
 							<div
+								id='roomEight'
 								onClick={() => {
 									setShowCreateAssignmentModal(true);
 									setSelectedRoom(7);
@@ -211,6 +211,7 @@ export const MapViewPage = () => {
 						</div>
 						<div className='roomDiv'>
 							<div
+								id='roomSeven'
 								onClick={() => {
 									setShowCreateAssignmentModal(true);
 									setSelectedRoom(6);
@@ -224,6 +225,7 @@ export const MapViewPage = () => {
 						</div>
 						<div className='roomDiv'>
 							<div
+								id='roomSix'
 								onClick={() => {
 									setShowCreateAssignmentModal(true);
 									setSelectedRoom(5);
@@ -243,3 +245,4 @@ export const MapViewPage = () => {
 		</>
 	);
 };
+

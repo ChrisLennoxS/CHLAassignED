@@ -33,6 +33,24 @@ const ModalWrapper = styled.div`
 `;
 
 export const CreateAssignmentModal = (props) => {
+	const [tempNurse, setTempNurse] = useState(undefined);
+
+	useEffect(() => {
+		document.getElementById('createAssignmentButton').disabled = true;
+
+		console.log(props.selectedRoom);
+	}, []);
+
+	useEffect(() => {
+		if (
+			tempNurse > 0 &&
+			tempNurse !== undefined &&
+			props.selectedRoom !== null
+		) {
+			document.getElementById('createAssignmentButton').disabled = false;
+		}
+	}, [tempNurse, props.selectedRoom]);
+
 	return (
 		<>
 			<Background>
@@ -56,6 +74,7 @@ export const CreateAssignmentModal = (props) => {
 						<div id='nurses'>
 							<NurseDropdown
 								selectedNurse={props.selectedNurse}
+								tempNurse={(value) => setTempNurse(value)}
 								id='nurses'></NurseDropdown>
 						</div>
 						<div id='roomsDropDown'>
@@ -69,6 +88,7 @@ export const CreateAssignmentModal = (props) => {
 
 						<div className='modalContent assignButton'>
 							<button
+								id='createAssignmentButton'
 								onClick={() => {
 									props.showCreateModal(false);
 									props.parentClickCount();

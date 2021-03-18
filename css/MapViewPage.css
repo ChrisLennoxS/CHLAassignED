@@ -127,7 +127,7 @@ footer {
 	padding: 5px 5px;
 }
 
-#outermostDiv .roomAssign:hover {
+#outermostDiv .roomAssign {
 	outline: 0px solid transparent;
 	padding: -5px -5px;
 	border: 5px solid #5db94c;

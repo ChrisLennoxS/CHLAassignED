@@ -27,21 +27,20 @@ export const RoomDropDown = (props) => {
 	useEffect(() => {
 		(props.selectedRoom === undefined || props.selectedRoom === null)
 			? setContent(
-					<div onClick={console.log("blueee")} className='chosenRoomDiv d-flex justify-content-between'>
+					<div className='chosenRoomDiv d-flex justify-content-between'>
 						<div >
 							<p className='roomText'>Choose a room</p>
 						</div>
 						<img
 							id='roomDropDownSelectChevron'
 							src={dropDownArrow}></img>
-							{console.log(props.selectedRoom)}
+							
 					</div>
 			  )
 			: setContent(
 				
 					<div className='chosenRoomDiv d-flex justify-content-between'>
-						{console.log("existss")}
-						{console.log(props.selectedRoom)}
+						
 						<div>
 							<p onClick={(e) => e.bubbles} className='roomText'>
 								

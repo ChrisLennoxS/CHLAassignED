@@ -8,6 +8,9 @@ import { CalendarDropDown } from '../components/CalendarDropDown.js';
 import { AssignmentHistoryTable } from '../components/AssignmentHistoryTable.js';
 import greenFile from '../images/greenFile.svg';
 
+
+
+
 export const RoomHistoryPage = () => {
 	const [startDate, setStartDate] = useState(new Date(2021, 2, 1));
 	const [endDate, setEndDate] = useState(new Date(2021, 3, 15));
@@ -28,6 +31,7 @@ export const RoomHistoryPage = () => {
 							selectedNurse={() => console.log()}></NurseDropdown>*/}
 						<RoomDropDown className='roomsDropDown'></RoomDropDown>
 						<NurseDropdown
+						tempNurse={() => console.log("worlsls")}
 							selectedNurse={() => console.log()}></NurseDropdown>
 						<CalendarDropDown
 							setStartDate={(start) => setStartDate(start)}
@@ -56,3 +60,4 @@ export const RoomHistoryPage = () => {
 		</>
 	);
 };
+

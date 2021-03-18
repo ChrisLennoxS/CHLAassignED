@@ -3,6 +3,11 @@ import '../css/NurseDropDown.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { nurses } from '../json/nurses';
 import dropDownArrow from '../images/selectChevron.svg';
+import { checkPropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
+
+
+
 
 export const NurseDropdown = (props) => {
 	const [content, setContent] = useState('Choose a nurse');
@@ -36,13 +41,15 @@ export const NurseDropdown = (props) => {
 		if (props === null) {
 		} else {
 			props.selectedNurse(currentNurseIndex);
+			
+			props.tempNurse(clickCount); 
+			
 		}
 	}, [clickCount]);
 
 	useEffect(() => {
-		if (props === null) {
-		} else {
-			props.selectedNurse == null
+		
+			(clickCount === 0)
 				? setContent(
 						<div className='chosenNurseDiv d-flex justify-content-between'>
 							<div className='currentSelectedNurseDropDown'>
@@ -58,7 +65,9 @@ export const NurseDropdown = (props) => {
 						</div>
 				  )
 				: setContent(
+					
 						<div className='chosenNurseDiv d-flex justify-content-between'>
+						
 							<div className='currentSelectedNurseDropDown'>
 								<img
 									className='nurseImage'
@@ -78,10 +87,10 @@ export const NurseDropdown = (props) => {
 								src={dropDownArrow}></img>
 						</div>
 				  );
-		}
+		
 	}, []);
 
-	//console.log(e.currentTarget)}
+
 
 	return (
 		<>
@@ -103,6 +112,7 @@ export const NurseDropdown = (props) => {
 								onClick={(e) => {
 									setCurrentNurseIndex(key);
 									setClickCount(clickCount + 1);
+									
 								}}
 								className='nurseDiv'
 								key={key}>
@@ -124,4 +134,12 @@ export const NurseDropdown = (props) => {
 			</span>
 		</>
 	);
+};
+
+const nursePropTypes = {
+	tempNurse: PropTypes.func
+}
+
+NurseDropdown.defaultProps = {
+	tempNurse: PropTypes.func
 };

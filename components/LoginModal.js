@@ -5,7 +5,6 @@ import logoAssignED from '../images/Group 15.png';
 import logoCHLA from '../images/CHLA 1.svg';
 import 'bootstrap/dist/css/bootstrap.css';
 
-
 const userInfo = [
 	{
 		email: 'nurse',
@@ -126,6 +125,14 @@ export const LoginModal = () => {
 		}, 3000);
 	}, [error]);
 
+	useEffect(() => {
+		if (userInput.email.length == 0 || userInput.password.length == 0) {
+			document.getElementById('loginModalSignInButton').disabled = true;
+		} else {
+			document.getElementById('loginModalSignInButton').disabled = false;
+		}
+	}, [userInput]);
+
 	return (
 		<>
 			<Background>
@@ -171,6 +178,7 @@ export const LoginModal = () => {
 						{error}
 						<div className='modalContent signIn'>
 							<button
+								id='loginModalSignInButton'
 								onClick={loginCheck}
 								className='float-right btn btn-success '>
 								Sign In

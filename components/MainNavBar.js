@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logoAssignED from '../images/Group 15.png';
 import user from '../images/Group 12.svg';
 import menu from '../images/HamburgerMenu.svg';
@@ -18,9 +18,21 @@ import 'jquery/dist/jquery.min.js';
  */
 
 export const MainNavBar = (props) => {
+	useEffect(() => {
+		if (window.location.pathname === '/map-view') {
+			document.getElementById('navBarMapViewLink').disabled = true;
+			document.getElementById('navBarMapView').style.backgroundColor = "#DCE1E2";
+			
+		}else if(window.location.pathname === '/room-history'){
+			document.getElementById('navBarAssignmentHistoryLink').disabled = true;
+			document.getElementById('navBarAssignmentHistory').style.backgroundColor = "#DCE1E2";
+		}
+	}, []);
+
 	return (
 		<>
 			<nav className='navbar mainNav'>
+				
 				<img
 					className='logo image'
 					src={logoAssignED}
@@ -48,7 +60,11 @@ export const MainNavBar = (props) => {
 							aria-labelledby='dropdownMenuButton'>
 							<div className='navItemBox'>
 								<div className='dropdown-item'>
-									<img className='navItem' src={plus} alt=""/>
+									<img
+										className='navItem'
+										src={plus}
+										alt=''
+									/>
 									<a
 										className=' navItem'
 										onClick={
@@ -65,15 +81,19 @@ export const MainNavBar = (props) => {
 										Create Assignment
 									</a>
 								</div>
-								<div className='dropdown-item'>
+								<div className='dropdown-item' id='navBarMapView'>
 									<img className='navItem' src={mapWithPin} />
-									<a className=' navItem' href='#'>
+									<a
+										className=' navItem'
+										id='navBarMapViewLink'
+										href='#'>
 										Map View
 									</a>
 								</div>
-								<div className='dropdown-item'>
+								<div className='dropdown-item' id="navBarAssignmentHistory">
 									<img className='navItem' src={rewind} />
 									<a
+										id="navBarAssignmentHistoryLink"
 										className=' navItem'
 										href='/room-history'>
 										Assignment History
