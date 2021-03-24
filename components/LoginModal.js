@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import '../css/LoginModal.css';
 import logoAssignED from '../images/Group 15.png';
 import logoCHLA from '../images/CHLA 1.svg';
 import 'bootstrap/dist/css/bootstrap.css';
+import { nurses } from '../json/nurses.js';
+import { CurrentUser } from '../components/CurrentUserContext';
+import {Link, Redirect, useHistory} from 'react-router-dom';
 
 const userInfo = [
 	{
@@ -43,20 +46,41 @@ const ModalWrapper = styled.div`
 export const LoginModal = () => {
 	const emailRef = document.getElementById('emailInput');
 	const passwordRef = document.getElementById('passwordInput');
+	const { value, setValue } = useContext(CurrentUser);
+	let history = useHistory();
 
 	const [userInput, setUserInput] = useState({ email: '', password: '' });
 	const [error, setError] = useState('');
+
+	const userChecker = (loginEmail) => {
+		const input = nurses.find(
+			(obj) => Object.values(obj).indexOf(loginEmail) > -1
+		);
+
+		return input;
+	};
+
+	const loginUser = () => {
+		history.push('/map-view')
+	}
+
+	useEffect(() => {
+		console.log("please work this time " + value.firstName)
+	},[])
 
 	const loginCheck = () => {
 		setError('');
 		emailRef.style.borderColor = 'black';
 		passwordRef.style.borderColor = 'black';
 		if (
-			(userInput.email === userInfo[0].email &&
-				userInput.password === userInfo[0].password) ||
-			(userInput.email === userInfo[1].email &&
-				userInput.password === userInfo[1].password)
+			userChecker(userInput.email) !== undefined &&
+			userInput.password === 'password'
 		) {
+			{console.log("The og val is " + value.firstName)}
+			{console.log(userChecker(userInput.email))}
+			//setValue(userChecker(userInput.email))
+			{console.log("The new value is " + value)}
+
 			setError(
 				<div
 					className='errorDiv'
@@ -64,43 +88,13 @@ export const LoginModal = () => {
 					<p>Success! Logging you in.</p>
 				</div>
 			);
-			console.log(<div>Success! Logging you in.</div>);
+			
 			setTimeout(() => {
-				window.location.href = '/map-view';
+				loginUser()
+				
+				//window.location.href = '/map-view';
 			}, 1500);
-		} else if (
-			userInput.email !== userInfo[0].email &&
-			userInput.password !== userInfo[0].password &&
-			userInput.email !== userInfo[1].email &&
-			userInput.password !== userInfo[1].password
-		) {
-			setError(
-				<div className='errorDiv'>
-					<p>Invalid Inputs. Please try again</p>
-				</div>
-			);
-			console.log('Invalid Inputs. Please try again');
-			emailRef.style.borderColor = 'red';
-			passwordRef.style.borderColor = 'red';
-			return <div>Invalid Inputs. Please try again</div>;
-		} else if (
-			userInput.email !== userInfo[0].email &&
-			userInput.email !== userInfo[1].email
-		) {
-			setError(
-				<div className='errorDiv'>
-					<p>Username Incorrect. Please try again</p>
-				</div>
-			);
-			console.log(userInput.email);
-			console.log(userInfo.email);
-			console.log('Email is incorrect');
-			emailRef.style.borderColor = 'red';
-			return <div>Username Incorrect. Please try again</div>;
-		} else if (
-			userInput.password !== userInfo[0].password &&
-			userInput.password !== userInfo[1].password
-		) {
+		} else if (userInput.password !== 'password') {
 			setError(
 				<div className='errorDiv'>
 					<p>Password Incorrect. Please try again</p>
@@ -113,12 +107,27 @@ export const LoginModal = () => {
 					Password Incorrect. Please try again
 				</div>
 			);
+		} else if (
+			(userChecker(userInput.email) === undefined &&
+				userInput.password !== 'password') ||
+			(userChecker(userInput.email) === undefined &&
+				userInput.password === 'password')
+		) {
+			setError(
+				<div className='errorDiv'>
+					<p>Invalid Inputs. Please try again</p>
+				</div>
+			);
+			console.log('Invalid Inputs. Please try again');
+			emailRef.style.borderColor = 'red';
+			passwordRef.style.borderColor = 'red';
+			return <div>Invalid Inputs. Please try again</div>;
 		}
 	};
 
 	useEffect(() => {
 		setTimeout(() => {
-			console.log(error);
+			
 			if (error === <div>Success! Logging you in.</div>) {
 			}
 			setError('');
@@ -126,7 +135,7 @@ export const LoginModal = () => {
 	}, [error]);
 
 	useEffect(() => {
-		if (userInput.email.length == 0 || userInput.password.length == 0) {
+		if (userInput.email.length === 0 || userInput.password.length === 0) {
 			document.getElementById('loginModalSignInButton').disabled = true;
 		} else {
 			document.getElementById('loginModalSignInButton').disabled = false;

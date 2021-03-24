@@ -3,10 +3,6 @@ import '../css/NurseDropDown.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { nurses } from '../json/nurses';
 import dropDownArrow from '../images/selectChevron.svg';
-import { checkPropTypes } from 'prop-types';
-import PropTypes from 'prop-types';
-
-
 
 
 export const NurseDropdown = (props) => {
@@ -41,62 +37,54 @@ export const NurseDropdown = (props) => {
 		if (props === null) {
 		} else {
 			props.selectedNurse(currentNurseIndex);
-			
-			props.tempNurse(clickCount); 
-			
+			props.setNurseContent(currentNurseIndex)
+			props.tempNurse(clickCount);
 		}
 	}, [clickCount]);
 
 	useEffect(() => {
-		
-			(clickCount === 0)
-				? setContent(
-						<div className='chosenNurseDiv d-flex justify-content-between'>
-							<div className='currentSelectedNurseDropDown'>
-								<p className='defaultOptionNurseDropDown'>
-									{' '}
-									Choose a nurse{' '}
-								</p>
-							</div>{' '}
+		props.setNurseContent(content)
+		clickCount === 0
+			? setContent(
+					<div className='chosenNurseDiv d-flex justify-content-between'>
+						<div className='currentSelectedNurseDropDown'>
+							<p className='defaultOptionNurseDropDown'>
+								{' '}
+								Choose a nurse{' '}
+							</p>
+						</div>{' '}
+						<img
+							id='nurseDropDownSelectChevron'
+							src={dropDownArrow}
+							alt=''></img>
+					</div>
+			  )
+			: setContent(
+					<div className='chosenNurseDiv d-flex justify-content-between'>
+						<div className='currentSelectedNurseDropDown'>
 							<img
-								id='nurseDropDownSelectChevron'
-								src={dropDownArrow}
-								alt=''></img>
-						</div>
-				  )
-				: setContent(
-					
-						<div className='chosenNurseDiv d-flex justify-content-between'>
-						
-							<div className='currentSelectedNurseDropDown'>
-								<img
-									className='nurseImage'
-									src={nurses[currentNurseIndex].image}
-									alt='nurse'
-								/>
-								<p
-									onClick={(e) => e.bubbles}
-									className='nurseText'>
-									{' '}
-									{nurses[currentNurseIndex].firstName}{' '}
-									{nurses[currentNurseIndex].lastName}{' '}
-								</p>
-							</div>{' '}
-							<img
-								id='nurseDropDownSelectChevron'
-								src={dropDownArrow}></img>
-						</div>
-				  );
-		
+								className='nurseImage'
+								src={nurses[currentNurseIndex].image}
+								alt='nurse'
+							/>
+							<p onClick={(e) => e.bubbles} className='nurseText'>
+								{' '}
+								{nurses[currentNurseIndex].firstName}{' '}
+								{nurses[currentNurseIndex].lastName}{' '}
+							</p>
+						</div>{' '}
+						<img
+							id='nurseDropDownSelectChevron'
+							src={dropDownArrow}></img>
+					</div>
+			  );
 	}, []);
-
-
 
 	return (
 		<>
-			<span className=''>
+			
 				<button
-					className='btn nurseDropButton '
+					className='btn nurseDropButton'
 					type='button'
 					data-toggle='dropdown'
 					aria-haspopup='true'
@@ -104,15 +92,15 @@ export const NurseDropdown = (props) => {
 					{content}
 				</button>
 				<div
-					className='dropdown-menu dropDownContainer '
+					className='dropdown-menu nurseDropDownContainer '
 					aria-labelledby='dropdownMenuButton'>
 					{nurses.map((data, key) => {
 						return (
 							<div
-								onClick={(e) => {
+								onClick={() => {
 									setCurrentNurseIndex(key);
+									props.setNurseContent(content)
 									setClickCount(clickCount + 1);
-									
 								}}
 								className='nurseDiv'
 								key={key}>
@@ -131,15 +119,13 @@ export const NurseDropdown = (props) => {
 						);
 					})}
 				</div>
-			</span>
+			
 		</>
 	);
 };
 
-const nursePropTypes = {
-	tempNurse: PropTypes.func
-}
 
 NurseDropdown.defaultProps = {
-	tempNurse: PropTypes.func
-};
+	setNurseContent:() => {},
+	tempNurse:() => {}
+}

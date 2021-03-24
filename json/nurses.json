@@ -1,0 +1,23 @@
+{
+    "nurses": [
+        {
+            "firstName" : "Taylor",
+            "lastName" : "Brereton",
+            "image": "../images/Group 15.png"
+
+        },
+        {
+            "firstName" : "Nina",
+            "lastName" : "Ho",
+            "image": "../images/Group 15.png"
+        },
+        {
+            "firstName" : "Lennox",
+            "lastName" : "Scott",
+            "image": "../images/Group 15.png"
+        }
+    ]
+
+    
+}
+

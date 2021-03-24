@@ -8,17 +8,6 @@ export const CalendarDropDown = (props) => {
 	const [content, setContent] = useState('Choose a date');
 	const [clickCount, setClickCount] = useState(0);
 	const [showDefaultArrow, setShowDefaultArrow] = useState(true);
-	const [startDate, setStartDate] = useState(new Date());
-	const [endDate, setEndDate] = useState(null);
-
-	const onChange = (dates) => {
-		const { start, end } = dates;
-		setStartDate(start);
-		setEndDate(end);
-		console.log(dates.start);
-		console.log(startDate);
-		console.log(endDate);
-	};
 
 	useEffect(() => {
 		setShowDefaultArrow(false);
@@ -41,7 +30,7 @@ export const CalendarDropDown = (props) => {
 					</div>{' '}
 					<img
 						id='calendarDropDownSelectChevron'
-						src={dropDownArrow}></img>
+						src={dropDownArrow} alt=""></img>
 				</div>
 			);
 		}

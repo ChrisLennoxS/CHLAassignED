@@ -73,6 +73,9 @@ export default class Example extends React.Component {
 
 	handleResetClick() {
 		this.setState(this.getInitialState());
+		this.props.setStartDate(null);
+		this.props.setEndDate(null);
+		this.props.parentSetDate('Choose a date')
 	}
 
 	render() {

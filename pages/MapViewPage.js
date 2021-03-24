@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/RoomHistoryPage.css';
 import '../css/MapViewPage.css';
@@ -6,6 +6,7 @@ import { MainNavBar } from '../components/MainNavBar';
 import { MainFooter } from '../components/MainFooter';
 import { CreateAssignmentModal } from '../components/CreateAssignmentModal';
 import { nurses } from '../json/nurses';
+import { CurrentUser } from '../components/CurrentUserContext';
 
 export const MapViewPage = () => {
 	const [showCreateAssignmentModal, setShowCreateAssignmentModal] = useState(
@@ -39,6 +40,24 @@ export const MapViewPage = () => {
 	const [roomEightImage, setRoomEightImage] = useState(
 		require('../images/plus.svg')
 	);
+
+	const {value, setValue} = useContext(CurrentUser);
+
+	useEffect(() => {
+		// console.log("reeeeee " + why.setCurrentUser("yeee"))
+		// console.log("reeeeee " + why.currentUser.first)
+
+		console.log("trrrrrr " + value);
+		console.log("wewewewew ");
+		
+		
+		console.log("vvvvvvvv " + value);
+
+		
+		
+
+
+	},[])
 
 	useEffect(() => {
 		if (selectedNurse === null) {
@@ -82,6 +101,10 @@ export const MapViewPage = () => {
 		console.log(clickCount);
 	}, [clickCount]);
 
+	useEffect(() => {
+		console.log("please be utilized  this time " + value.firstName)
+	},[])
+
 	return (
 		<>
 			<MainNavBar
@@ -91,6 +114,7 @@ export const MapViewPage = () => {
 					setSelectedRoom(null);
 					setSelectedNurse(null);
 				}}></MainNavBar>
+				{<button style={{height: "400px"}} onClick={() => {setValue({firstName: "johna"}); console.log(value)}}>changeValue</button>}
 			{showCreateAssignmentModal ? (
 				<CreateAssignmentModal
 					overrideParentRoomChange={(newSelectedRoom) =>
@@ -123,7 +147,7 @@ export const MapViewPage = () => {
 								<p>Room 1</p>
 								<img
 									className='roomImg'
-									src={roomOneImage}></img>
+									src={roomOneImage} alt=""></img>
 							</div>
 						</div>
 						<div className='roomDiv d-flex justify-content-around'>
@@ -137,7 +161,7 @@ export const MapViewPage = () => {
 								<p>Room 2</p>
 								<img
 									className='roomImg'
-									src={roomTwoImage}></img>
+									src={roomTwoImage} alt=""></img>
 							</div>
 							<div
 								id='roomThree'
@@ -149,7 +173,7 @@ export const MapViewPage = () => {
 								<p>Room 3</p>
 								<img
 									className='roomImg'
-									src={roomThreeImage}></img>
+									src={roomThreeImage} alt=""></img>
 							</div>
 						</div>
 						<div className='roomDiv'>
@@ -163,7 +187,7 @@ export const MapViewPage = () => {
 								<p>Room 4</p>
 								<img
 									className='roomImg'
-									src={roomFourImage}></img>
+									src={roomFourImage} alt=""></img>
 							</div>
 						</div>
 					</div>
@@ -190,7 +214,7 @@ export const MapViewPage = () => {
 								<img
 									id='roomFiveImage'
 									className='roomImg'
-									src={roomFiveImage}></img>
+									src={roomFiveImage} alt=""></img>
 							</div>
 						</div>
 					</div>
@@ -206,7 +230,7 @@ export const MapViewPage = () => {
 								<p>Room 8</p>
 								<img
 									className='roomImg'
-									src={roomEightImage}></img>
+									src={roomEightImage} alt=""></img>
 							</div>
 						</div>
 						<div className='roomDiv'>
@@ -220,7 +244,7 @@ export const MapViewPage = () => {
 								<p>Room 7</p>
 								<img
 									className='roomImg'
-									src={roomSevenImage}></img>
+									src={roomSevenImage} alt=""></img>
 							</div>
 						</div>
 						<div className='roomDiv'>
@@ -234,7 +258,7 @@ export const MapViewPage = () => {
 								<p>Room 6</p>
 								<img
 									className='roomImg'
-									src={roomSixImage}></img>
+									src={roomSixImage} alt=""></img>
 							</div>
 						</div>
 					</div>

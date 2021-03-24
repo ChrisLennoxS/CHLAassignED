@@ -36,7 +36,7 @@ export const assignmentHistory = [
 	},
 	{
 		nurse: 'Taylor Brereton',
-		room: 'Room 1: 2 Beds',
+		room: 'Room 2: 1 Bed',
 		date: '2/22/2021',
 		start: '01:21',
 		end: '01:21',

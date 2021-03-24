@@ -25,34 +25,35 @@ export const RoomDropDown = (props) => {
 	}, [clickCount]);
 
 	useEffect(() => {
-		(props.selectedRoom === undefined || props.selectedRoom === null)
-			? setContent(
+		
+		if (props.selectedRoom === undefined || props.selectedRoom === null){
+			{props.setRoomContent('Choose a room')}
+			setContent(
 					<div className='chosenRoomDiv d-flex justify-content-between'>
 						<div >
 							<p className='roomText'>Choose a room</p>
 						</div>
 						<img
 							id='roomDropDownSelectChevron'
-							src={dropDownArrow}></img>
+							src={dropDownArrow} alt=""></img>
 							
 					</div>
 			  )
-			: setContent(
-				
+		} else{
+			setContent(
 					<div className='chosenRoomDiv d-flex justify-content-between'>
-						
 						<div>
 							<p onClick={(e) => e.bubbles} className='roomText'>
-								
 								{floorRooms[props.selectedRoom]['room']}{" : "}
 								{floorRooms[props.selectedRoom]['numOfBeds']}
 							</p>
 						</div>
 						<img
 							id='roomDropDownSelectChevron'
-							src={dropDownArrow}></img>
+							src={dropDownArrow} alt=""></img>
 					</div>
 			  );
+			}
 	}, []);
 
 	const handleRoomDropDownProp = (roomNum) => {
@@ -64,7 +65,7 @@ export const RoomDropDown = (props) => {
 	return (
 		<>
 			<button
-				className=' roomDropButton '
+				className='btn roomDropButton '
 				type='button'
 				data-toggle='dropdown'
 				aria-haspopup='true'
@@ -72,16 +73,17 @@ export const RoomDropDown = (props) => {
 				{content}
 			</button>
 			<div
-				className='dropdown-menu dropDownContainer '
+				className='dropdown-menu roomDropDownContainer '
 				aria-labelledby='dropdownMenuButton'>
 				{floorRooms.map((data, key) => {
 					return (
 						<div
 							onClick={() => ([
 								setCurrentRoomIndex(key),
+								props.setRoomContent(key),
 								setClickCount(clickCount + 1),
-								(props.overrideParentRoomChange !== undefined) ? props.overrideParentRoomChange(key): null
-								 
+								(props.overrideParentRoomChange !== undefined) ? props.overrideParentRoomChange(key): null,
+								 props.assignmentRoom(key)
 								
 							])}
 							className='roomChoiceDiv'
@@ -99,3 +101,8 @@ export const RoomDropDown = (props) => {
 		</>
 	);
 };
+
+RoomDropDown.defaultProps = {
+	assignmentRoom: (() => {}),
+	setRoomContent: () => {}
+}

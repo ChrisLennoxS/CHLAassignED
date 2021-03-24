@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import logoAssignED from '../images/Group 15.png';
 import user from '../images/Group 12.svg';
 import menu from '../images/HamburgerMenu.svg';
@@ -10,6 +11,7 @@ import logout from '../images/logout.svg';
 import '../css/MainNavBar.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'jquery/dist/jquery.min.js';
+import { CurrentUser } from './CurrentUserContext.js';
 
 /*
  *<div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" 
@@ -18,21 +20,36 @@ import 'jquery/dist/jquery.min.js';
  */
 
 export const MainNavBar = (props) => {
+	const status = useContext(CurrentUser);
+
+	const [steak, setSteak] = useState('tenderloing');
+
 	useEffect(() => {
+		console.log('asdsfafdsafds ' + steak);
+		setSteak('cherry');
+
 		if (window.location.pathname === '/map-view') {
+			document.getElementById('navBarMapViewLink').href =
+				'javascript: void(0)';
 			document.getElementById('navBarMapViewLink').disabled = true;
-			document.getElementById('navBarMapView').style.backgroundColor = "#DCE1E2";
-			
-		}else if(window.location.pathname === '/room-history'){
-			document.getElementById('navBarAssignmentHistoryLink').disabled = true;
-			document.getElementById('navBarAssignmentHistory').style.backgroundColor = "#DCE1E2";
+			document.getElementById('navBarMapView').style.backgroundColor =
+				'#DCE1E2';
+		} else if (window.location.pathname === '/room-history') {
+			document.getElementById(
+				'navBarAssignmentHistoryLink'
+			).disabled = true;
+			document.getElementById(
+				'navBarAssignmentHistory'
+			).style.backgroundColor = '#DCE1E2';
+			document.getElementById('navBarAssignmentHistoryLink').href =
+				'javascript: void(0)';
 		}
+		console.log('lnlkmk ' + steak);
 	}, []);
 
 	return (
 		<>
 			<nav className='navbar mainNav'>
-				
 				<img
 					className='logo image'
 					src={logoAssignED}
@@ -65,7 +82,7 @@ export const MainNavBar = (props) => {
 										src={plus}
 										alt=''
 									/>
-									<a
+									<Link
 										className=' navItem'
 										onClick={
 											props.hasOwnProperty(
@@ -79,37 +96,62 @@ export const MainNavBar = (props) => {
 										}
 										href='#'>
 										Create Assignment
-									</a>
+									</Link>
 								</div>
-								<div className='dropdown-item' id='navBarMapView'>
-									<img className='navItem' src={mapWithPin} />
-									<a
+								<div
+									className='dropdown-item'
+									id='navBarMapView'>
+									<img
+										className='navItem'
+										src={mapWithPin}
+										alt=''
+									/>
+									<Link
+										to="/map-view"
 										className=' navItem'
 										id='navBarMapViewLink'
-										href='#'>
+										href='/map-view'>
 										Map View
-									</a>
+									</Link>
 								</div>
-								<div className='dropdown-item' id="navBarAssignmentHistory">
-									<img className='navItem' src={rewind} />
-									<a
-										id="navBarAssignmentHistoryLink"
+								<div
+									className='dropdown-item'
+									id='navBarAssignmentHistory'>
+									<img
+										className='navItem'
+										src={rewind}
+										alt=''
+									/>
+									<Link
+										to='/room-history'
+										id='navBarAssignmentHistoryLink'
 										className=' navItem'
 										href='/room-history'>
 										Assignment History
-									</a>
+									</Link>
 								</div>
 								<div className='dropdown-item'>
-									<img className='navItem' src={people} />
-									<a className=' navItem' href='#'>
+									<img
+										className='navItem'
+										src={people}
+										alt=''
+									/>
+									<Link to='#' className=' navItem' href='#'>
 										Create/ Edit View
-									</a>
+									</Link>
 								</div>
 								<div className='dropdown-item'>
-									<img className='navItem' src={logout} />
-									<a className=' navItem' href='/sign-in'>
+									<img
+										className='navItem'
+										src={logout}
+										alt=''
+									/>
+									<Link
+										to='/sign-in'
+										className=' navItem'
+										href='/sign-in'>
 										Log Out
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>
