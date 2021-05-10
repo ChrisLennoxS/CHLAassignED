@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { MainFooter } from '../components/MainFooter.js';
-import { MainNavBar } from '../components/MainNavBar.js';
-import { NurseDropdown } from '../components/NurseDropDown';
-import { RoomDropDown } from '../components/RoomDropDown.js';
-import { CalendarDropDown } from '../components/CalendarDropDown.js';
-import { AssignmentHistoryTable } from '../components/AssignmentHistoryTable.js';
-import greenFile from '../images/greenFile.svg';
+import { MainFooter } from '../../components/MainFooter/MainFooter.js';
+import { MainNavBar } from '../../components/MainNavBar/MainNavBar.js';
+import { NurseDropdown } from '../../components/DropDown/NurseDropDown.js';
+import { RoomDropDown } from '../../components/DropDown/RoomDropDown.js';
+import { CalendarDropDown } from '../../components/DropDown/CalendarDropDown.js';
+import { AssignmentHistoryTable } from '../../components/AssignmentHistoryTable/AssignmentHistoryTable.js'
+import greenFile from '../../images/greenFile.svg';
 import { CSVLink } from 'react-csv';
 
 export const RoomHistoryPage = () => {
@@ -19,6 +19,16 @@ export const RoomHistoryPage = () => {
 	const [runButtonClickCount, setRunButtonClickCount] = useState(0);
 	const [arrayToDownload, setArrayToDownload] = useState([]);
 
+	useEffect(() => {
+
+		if((currentNurse !== 0) || (currentRoom !==null)){
+			document.getElementById('runButton').disabled = false;
+		}else {
+			document.getElementById('runButton').disabled = true;
+		}
+		
+	},[startDate, currentNurse, currentRoom])
+
 	const headers = [
 		{ label: 'Nurse', key: 'nurse' },
 		{ label: 'Room', key: 'room' },
@@ -27,6 +37,11 @@ export const RoomHistoryPage = () => {
 		{ label: 'End', key: 'end' },
 	];
 
+	useEffect(() => {
+		console.log(arrayToDownload)
+	},[arrayToDownload])
+
+	// file name
 	const csvOutput = {
 		filename: 'nurseHistory_' + (new Date().toString().slice(0,21)) + ".csv",
 		headers: headers,
@@ -36,6 +51,7 @@ export const RoomHistoryPage = () => {
 	useEffect(() => {
 		console.log('The current room is ' + currentRoom);
 		console.log('The end date issss' + endDate);
+		
 	}, [startDate, endDate]);
 
 	return (

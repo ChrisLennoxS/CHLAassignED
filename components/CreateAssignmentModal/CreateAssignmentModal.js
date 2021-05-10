@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import styled from 'styled-components';
-import exitButton from '../images/iconfinder_icons_exit_1564505 1.svg';
-import '../css/CreateAssignmentModal.css';
-import { NurseDropdown } from '../components/NurseDropDown';
-import { RoomDropDown } from '../components/RoomDropDown';
+import exitButton from '@images/iconfinder_icons_exit_1564505 1.svg';
+import '@components/CreateAssignmentModal/CreateAssignmentModal.css'
+import { NurseDropdown } from '../DropDown/NurseDropDown.js'
+import { RoomDropDown } from '../DropDown/RoomDropDown.js';
 
 const Background = styled.div`
 	width: 100%;

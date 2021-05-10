@@ -1,9 +1,9 @@
 import React from 'react';
-import chlaLogo from '../images/CHLA 1.svg';
-import '../css/MainFooter.css';
+import chlaLogo from '@images/CHLA 1.svg';
+import '@components/MainFooter/MainFooter.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'jquery/dist/jquery.min.js';
-import sideBenchLogo from '../images/logo 1.svg';
+import sideBenchLogo from '@images/logo 1.svg';
 
 export const MainFooter = () => {
 	return (

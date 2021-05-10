@@ -2,14 +2,16 @@ import React, { createContext, useMemo, useState } from 'react';
 
 
 export const CurrentUser = createContext({
+	/*
 	setCurrentUser: () => {},
 	currentUser: 'none',
+	*/
 });
 
 export const CurrentUserProvider = (props) => {
-	const [value, setValue] = useState("nonwhe");
+	const [value, setValue] = useState("noone");
 
-	const userValue = useMemo(() => ({ value, setValue }), [value, setValue]);
+	
 
 	return (
 		<CurrentUser.Provider value={{value, setValue}}>

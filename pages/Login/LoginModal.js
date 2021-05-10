@@ -1,23 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
-import '../css/LoginModal.css';
-import logoAssignED from '../images/Group 15.png';
-import logoCHLA from '../images/CHLA 1.svg';
+import '../Login/LoginModal.css'
+import logoAssignED from '../../images/Group 15.png';
+import logoCHLA from "@images/CHLA 1.svg"
 import 'bootstrap/dist/css/bootstrap.css';
-import { nurses } from '../json/nurses.js';
-import { CurrentUser } from '../components/CurrentUserContext';
+import { nurses } from '../../json/nurses.js';
+import { CurrentUser } from '../../context/CurrentUserContext';
 import {Link, Redirect, useHistory} from 'react-router-dom';
-
-const userInfo = [
-	{
-		email: 'nurse',
-		password: 'password',
-	},
-	{
-		email: 'chargeNurse',
-		password: 'password',
-	},
-];
 
 const Background = styled.div`
 	width: 100%;
@@ -78,7 +67,7 @@ export const LoginModal = () => {
 		) {
 			{console.log("The og val is " + value.firstName)}
 			{console.log(userChecker(userInput.email))}
-			//setValue(userChecker(userInput.email))
+			setValue(userChecker(userInput.email))
 			{console.log("The new value is " + value)}
 
 			setError(
@@ -201,6 +190,7 @@ export const LoginModal = () => {
 							className='modalContent content'
 							src={logoCHLA}
 							alt='CHLA Logo'
+							style={{height: "65px"}}
 						/>
 					</div>
 				</ModalWrapper>

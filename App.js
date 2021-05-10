@@ -1,16 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { LoginModal } from './components/LoginModal.js';
-import { RoomHistoryPage } from './pages/RoomHistoryPage.js';
-import { MapViewPage } from './pages/MapViewPage.js';
-import { CreateAssignmentModal } from './components/CreateAssignmentModal.js';
-import { CurrentUserProvider } from './components/CurrentUserContext.js';
+import { LoginModal } from '../src/pages/Login/LoginModal.js';
+import { RoomHistoryPage } from './pages/RoomHistory/RoomHistoryPage.js';
+import { MapViewPage } from './pages/MapView/MapViewPage.js';
+import { CreateAssignmentModal } from './components/CreateAssignmentModal/CreateAssignmentModal.js';
+import { CurrentUserProvider } from './context/CurrentUserContext.js'
 
 function App() {
 	return (
-		
-			<Router>
-				<CurrentUserProvider>
+		<Router>
+			<CurrentUserProvider>
 				<Route path='/sign-in' component={LoginModal}></Route>
 				<Route
 					path='/room-history'
@@ -22,9 +21,8 @@ function App() {
 					component={CreateAssignmentModal}
 					exact></Route>
 				<Route path='/' component={LoginModal} exact></Route>
-				</CurrentUserProvider>
-			</Router>
-		
+			</CurrentUserProvider>
+		</Router>
 	);
 }
 

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import '../css/AssignmentHistoryTable.css';
-import { nurses } from '../json/nurses.js';
-import { floorRooms } from '../json/rooms.js';
-import { assignmentHistory } from '../json/assignmentHistory.js';
+import '../AssignmentHistoryTable/AssignmentHistoryTable.css';
+import { nurses } from '@json/nurses.js'; 
+import { floorRooms } from '@json/rooms.js';
+import { assignmentHistory } from '@json/assignmentHistory.js';
 
 export const AssignmentHistoryTable = (props) => {
 	const [assignmentData, setAssignmentData] = useState(

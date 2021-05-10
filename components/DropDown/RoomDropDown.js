@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import '../css/RoomDropDown.css';
+import './RoomDropDown.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import { floorRooms } from '../json/rooms';
-import dropDownArrow from '../images/selectChevron.svg';
+import { floorRooms } from '../../json/rooms';
+import dropDownArrow from '../../images/selectChevron.svg';
 
 export const RoomDropDown = (props) => {
 	const [content, setContent] = useState('Choose a room');
@@ -73,11 +73,11 @@ export const RoomDropDown = (props) => {
 				{content}
 			</button>
 			<div
-				className='dropdown-menu roomDropDownContainer '
+				className='dropdown-menu roomDropDownContainer assignmentHistoryRoomAndCalDropDown'
 				aria-labelledby='dropdownMenuButton'>
 				{floorRooms.map((data, key) => {
 					return (
-						<div
+						<div 
 							onClick={() => ([
 								setCurrentRoomIndex(key),
 								props.setRoomContent(key),

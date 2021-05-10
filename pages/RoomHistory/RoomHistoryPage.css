@@ -87,7 +87,7 @@
 	text-align: left;
 
 	appearance: none; /* hide the default arrow */
-	background: 95% url('../images/selectChevron.svg') no-repeat transparent;
+	background: 95% url('../../images/selectChevron.svg') no-repeat transparent;
 }
 
 .dropDownCalContainer {

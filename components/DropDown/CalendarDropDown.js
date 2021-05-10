@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import '../css/CalendarDropDown.css';
-import dropDownArrow from '../images/selectChevron.svg';
-import YearMonthForm from '../components/DropDownCalendar';
+import '../DropDown/DropDownCalendar.css';
+import '../DropDown/CalendarDropDown.css'
+import dropDownArrow from '../../images/selectChevron.svg';
+import YearMonthForm from './DropDownCalendar';
 
 export const CalendarDropDown = (props) => {
 	const [content, setContent] = useState('Choose a date');
@@ -49,7 +50,7 @@ export const CalendarDropDown = (props) => {
 				</button>
 				<div
 					onClick={(e) => e.stopPropagation()}
-					className='dropdown-menu calendarDropDownContainer '
+					className='dropdown-menu calendarDropDownContainer assignmentHistoryCalDropDown'
 					aria-labelledby='dropdownMenuButton'>
 					<YearMonthForm
 						setStartDate={(newStartDate) => props.setStartDate(newStartDate)}

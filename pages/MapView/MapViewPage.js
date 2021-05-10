@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import '../css/RoomHistoryPage.css';
-import '../css/MapViewPage.css';
-import { MainNavBar } from '../components/MainNavBar';
-import { MainFooter } from '../components/MainFooter';
-import { CreateAssignmentModal } from '../components/CreateAssignmentModal';
-import { nurses } from '../json/nurses';
-import { CurrentUser } from '../components/CurrentUserContext';
+import '../RoomHistory/RoomHistoryPage.css'
+import '../MapView/MapViewPage.css';
+import { MainNavBar } from '../../components/MainNavBar/MainNavBar.js'
+import { MainFooter } from '../../components/MainFooter/MainFooter.js';
+import { CreateAssignmentModal } from '../../components/CreateAssignmentModal/CreateAssignmentModal.js';
+import { nurses } from '../../json/nurses';
+import { CurrentUser } from '../../context/CurrentUserContext';
 
 export const MapViewPage = () => {
 	const [showCreateAssignmentModal, setShowCreateAssignmentModal] = useState(
@@ -17,47 +17,33 @@ export const MapViewPage = () => {
 	const [clickCount, setClickCount] = useState(0);
 
 	const [roomOneImage, setRoomOneImage] = useState(
-		require('../images/plus.svg')
+		require('../../images/plus.svg')
 	);
 	const [roomTwoImage, setRoomTwoImage] = useState(
-		require('../images/plus.svg')
+		require('../../images/plus.svg')
 	);
 	const [roomThreeImage, setRoomThreeImage] = useState(
-		require('../images/plus.svg')
+		require('../../images/plus.svg')
 	);
 	const [roomFourImage, setRoomFourImage] = useState(
-		require('../images/plus.svg')
+		require('../../images/plus.svg')
 	);
 	const [roomFiveImage, setRoomFiveImage] = useState(
-		require('../images/plus.svg')
+		require('../../images/plus.svg')
 	);
 	const [roomSixImage, setRoomSixImage] = useState(
-		require('../images/plus.svg')
+		require('../../images/plus.svg')
 	);
 	const [roomSevenImage, setRoomSevenImage] = useState(
-		require('../images/plus.svg')
+		require('../../images/plus.svg')
 	);
 	const [roomEightImage, setRoomEightImage] = useState(
-		require('../images/plus.svg')
+		require('../../images/plus.svg')
 	);
 
 	const {value, setValue} = useContext(CurrentUser);
 
-	useEffect(() => {
-		// console.log("reeeeee " + why.setCurrentUser("yeee"))
-		// console.log("reeeeee " + why.currentUser.first)
-
-		console.log("trrrrrr " + value);
-		console.log("wewewewew ");
-		
-		
-		console.log("vvvvvvvv " + value);
-
-		
-		
-
-
-	},[])
+	
 
 	useEffect(() => {
 		if (selectedNurse === null) {
@@ -98,7 +84,7 @@ export const MapViewPage = () => {
 			}
 		}
 		console.log(`the current selected nurse is${selectedNurse}`);
-		console.log(clickCount);
+		
 	}, [clickCount]);
 
 	useEffect(() => {
@@ -106,7 +92,7 @@ export const MapViewPage = () => {
 	},[])
 
 	return (
-		<>
+		<div id="pageDiv">
 			<MainNavBar
 				parentClickCount={() => setClickCount(clickCount + 1)}
 				showCreateModal={(value) => {
@@ -114,8 +100,7 @@ export const MapViewPage = () => {
 					setSelectedRoom(null);
 					setSelectedNurse(null);
 				}}></MainNavBar>
-				{<button style={{height: "400px"}} onClick={() => {setValue({firstName: "johna"}); console.log(value)}}>changeValue</button>}
-			{showCreateAssignmentModal ? (
+				{showCreateAssignmentModal ? (
 				<CreateAssignmentModal
 					overrideParentRoomChange={(newSelectedRoom) =>
 						setSelectedRoom(newSelectedRoom)
@@ -266,7 +251,7 @@ export const MapViewPage = () => {
 			</div>
 
 			<MainFooter></MainFooter>
-		</>
+		</div>
 	);
 };
 

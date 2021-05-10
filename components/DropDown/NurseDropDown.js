@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import '../css/NurseDropDown.css';
+import './NurseDropDown.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import { nurses } from '../json/nurses';
-import dropDownArrow from '../images/selectChevron.svg';
+import { nurses } from '../../json/nurses';
+import dropDownArrow from '../../images/selectChevron.svg';
 
 
 export const NurseDropdown = (props) => {
@@ -48,7 +48,7 @@ export const NurseDropdown = (props) => {
 			? setContent(
 					<div className='chosenNurseDiv d-flex justify-content-between'>
 						<div className='currentSelectedNurseDropDown'>
-							<p className='defaultOptionNurseDropDown'>
+							<p style={{paddingLeft: "7%"}} className='defaultOptionNurseDropDown'>
 								{' '}
 								Choose a nurse{' '}
 							</p>

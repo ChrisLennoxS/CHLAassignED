@@ -18,7 +18,7 @@ input {
 	margin-top: 35%;
 	width: 350px;
 	height: 68px;
-	margin-bottom: 15%;
+	margin-bottom: 20%;
 }
 
 .signIn {
@@ -52,7 +52,7 @@ button {
 	margin-right: auto;
 	text-align: center;
 	margin-top: 12%;
-	margin-bottom: 5%;
+	
 }
 
 .errorDiv {
@@ -78,4 +78,8 @@ button {
 .errorDiv p {
 	margin-top: 4.5%;
 	height: 19px;
+}
+
+#emailInput, #passwordInput {
+	padding-left: 3.75%;
 }
